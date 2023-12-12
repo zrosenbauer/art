@@ -25,6 +25,10 @@ Show that a project is archived and not maintained.
 <img src="https://raw.githubusercontent.com/zrosenbauer/art/main/banners/banner_archived.png" alt="Archived Project" />
 ```
 
+**example**
+
+[https://github.com/javascript-is-fun](https://github.com/javascript-is-fun)
+
 <details>
   <summary>Show Image</summary>
 
