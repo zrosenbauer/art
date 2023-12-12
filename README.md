@@ -13,8 +13,16 @@ Banners are added to the top of GitHub repositories to help quickly demonstrate 
 
 Show that a project is archived and not maintained.
 
+**markdown**
+
 ```
 ![Archived Project](https://raw.githubusercontent.com/zrosenbauer/art/main/banners/banner_archived.png)
+```
+
+**html**
+
+```
+<img src="https://raw.githubusercontent.com/zrosenbauer/art/main/banners/banner_archived.png" alt="Archived Project" />
 ```
 
 <details>
