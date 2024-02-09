@@ -9,6 +9,29 @@ Banners are added to the top of GitHub repositories to help quickly demonstrate 
 * [Archived Project](#archived-project)
 
 
+### Under Contruction Project
+
+Show that a project is under construction and not ready for use.
+
+**markdown**
+
+```
+![Archived Project](https://raw.githubusercontent.com/zrosenbauer/art/main/banners/banner_under_construction.png)
+```
+
+**html**
+
+```
+<img src="https://raw.githubusercontent.com/zrosenbauer/art/main/banners/banner_under_construction.png" alt="Under Construction Project" />
+```
+
+<details>
+  <summary>Show Image</summary>
+
+  ![Archived Project](https://raw.githubusercontent.com/zrosenbauer/art/main/banners/banner_archived.png)
+  
+</details>
+
 ### Archived Project
 
 Show that a project is archived and not maintained.
@@ -24,17 +47,6 @@ Show that a project is archived and not maintained.
 ```
 <img src="https://raw.githubusercontent.com/zrosenbauer/art/main/banners/banner_archived.png" alt="Archived Project" />
 ```
-
-**example**
-
-[https://github.com/javascript-is-fun](https://github.com/javascript-is-fun)
-
-<details>
-  <summary>Show Image</summary>
-
-  ![Archived Project](https://raw.githubusercontent.com/zrosenbauer/art/main/banners/banner_archived.png)
-  
-</details>
 
 ## Badges
 
