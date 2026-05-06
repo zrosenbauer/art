@@ -3,17 +3,11 @@
 > GitHub banners, badges, and miscellaneous visual art for [@zrosenbauer](https://github.com/zrosenbauer) projects.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-7268f0)](./LICENSE)
-[![Node ≥ 20](https://img.shields.io/badge/node-%E2%89%A5%2020-7268f0)](https://nodejs.org)
 [![Built with TanStack Start](https://img.shields.io/badge/built_with-TanStack_Start-7268f0)](https://tanstack.com/start)
-[![Style: shadcn/ui](https://img.shields.io/badge/style-shadcn%2Fui-7268f0)](https://ui.shadcn.com)
 
-Each asset lives in its own directory under `art/<category>/<name>/` with an
-`art.yaml` describing it (title, description, alt, tags). Drop an SVG into
-that directory and the watcher renders a 2× retina PNG sibling
-automatically. Then paste the snippet from the catalog below into any
-README.
+Browse the [catalog](#catalog) below, copy a markdown or HTML snippet, paste it into any README. Images are served from `raw.githubusercontent.com` — no CDN to set up, no versioning to track.
 
-**Quick links** · [Asset catalog](#catalog) · [Using an asset](#using-an-asset) · [Architecture](#architecture) · [Develop](#develop) · [Adding a new asset](#adding-a-new-asset) · [Common tasks](#common-tasks) · [Troubleshooting](#troubleshooting) · [AGENTS.md](./AGENTS.md)
+To contribute, run the asset viewer, or add a new asset, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 > ⚠ **Don't edit the catalog by hand.** The sections between the
 > `<!-- BEGIN CATALOG -->` and `<!-- END CATALOG -->` markers are
@@ -73,174 +67,187 @@ Retro CRT-terminal banner — show that a project is under construction and not 
 
 📁 Sources: [svg](./art/banners/banner_under_construction/banner_under_construction.svg) · [png](./art/banners/banner_under_construction/banner_under_construction.png)
 
+## Skillicons
+
+256×256 skillicons.dev-style tool icons — flat single-color foreground on a brand-color squircle (rx=60). Centered for ~50–70% canvas occupancy so they read at favicon scale.
+
+### Claude Code
+
+<sup>256×256 · `skillicon` · `icon` · `tool` · `ai`</sup>
+
+<p align="center"><img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/claude_code/claude_code.svg" alt="Claude Code" /></p>
+
+Skillicon for Claude Code — radial spark on a clay squircle.
+
+**Markdown**
+
+```markdown
+![Claude Code](https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/claude_code/claude_code.svg)
+```
+
+**HTML**
+
+```html
+<img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/claude_code/claude_code.svg" alt="Claude Code" />
+```
+
+📁 Sources: [svg](./art/skillicons/claude_code/claude_code.svg)
+
+### Fastify
+
+<sup>256×256 · `skillicon` · `icon` · `tool` · `framework`</sup>
+
+<p align="center"><img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/fastify/fastify.svg" alt="Fastify" /></p>
+
+Skillicon for Fastify — TBD; awaiting source mark.
+
+**Markdown**
+
+```markdown
+![Fastify](https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/fastify/fastify.svg)
+```
+
+**HTML**
+
+```html
+<img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/fastify/fastify.svg" alt="Fastify" />
+```
+
+📁 Sources: [svg](./art/skillicons/fastify/fastify.svg)
+
+### OpenCode
+
+<sup>256×256 · `skillicon` · `icon` · `tool` · `terminal`</sup>
+
+<p align="center"><img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/opencode/opencode.svg" alt="OpenCode" /></p>
+
+Skillicon for OpenCode — pixel-blocky monogram on an orange squircle.
+
+**Markdown**
+
+```markdown
+![OpenCode](https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/opencode/opencode.svg)
+```
+
+**HTML**
+
+```html
+<img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/opencode/opencode.svg" alt="OpenCode" />
+```
+
+📁 Sources: [svg](./art/skillicons/opencode/opencode.svg)
+
+### Pulumi
+
+<sup>256×256 · `skillicon` · `icon` · `tool` · `infra`</sup>
+
+<p align="center"><img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/pulumi/pulumi.svg" alt="Pulumi" /></p>
+
+Skillicon for Pulumi — sun-burst on a purple squircle.
+
+**Markdown**
+
+```markdown
+![Pulumi](https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/pulumi/pulumi.svg)
+```
+
+**HTML**
+
+```html
+<img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/pulumi/pulumi.svg" alt="Pulumi" />
+```
+
+📁 Sources: [svg](./art/skillicons/pulumi/pulumi.svg)
+
+### TanStack Start
+
+<sup>256×256 · `skillicon` · `icon` · `tool` · `framework`</sup>
+
+<p align="center"><img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/tanstack_start/tanstack_start.svg" alt="TanStack Start" /></p>
+
+Skillicon for TanStack Start — concentric rings on a red squircle.
+
+**Markdown**
+
+```markdown
+![TanStack Start](https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/tanstack_start/tanstack_start.svg)
+```
+
+**HTML**
+
+```html
+<img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/tanstack_start/tanstack_start.svg" alt="TanStack Start" />
+```
+
+📁 Sources: [svg](./art/skillicons/tanstack_start/tanstack_start.svg)
+
+### Vercel AI SDK
+
+<sup>256×256 · `skillicon` · `icon` · `tool` · `ai`</sup>
+
+<p align="center"><img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/vercel_ai_sdk/vercel_ai_sdk.svg" alt="Vercel AI SDK" /></p>
+
+Skillicon for the Vercel AI SDK — triangle with an AI dot on a black squircle.
+
+**Markdown**
+
+```markdown
+![Vercel AI SDK](https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/vercel_ai_sdk/vercel_ai_sdk.svg)
+```
+
+**HTML**
+
+```html
+<img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/vercel_ai_sdk/vercel_ai_sdk.svg" alt="Vercel AI SDK" />
+```
+
+📁 Sources: [svg](./art/skillicons/vercel_ai_sdk/vercel_ai_sdk.svg)
+
+### VoltAgent
+
+<sup>256×256 · `skillicon` · `icon` · `tool` · `ai`</sup>
+
+<p align="center"><img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/voltagent/voltagent.svg" alt="VoltAgent" /></p>
+
+Skillicon for VoltAgent — bolt glyph on an emerald disc set in a dark squircle.
+
+**Markdown**
+
+```markdown
+![VoltAgent](https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/voltagent/voltagent.svg)
+```
+
+**HTML**
+
+```html
+<img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/voltagent/voltagent.svg" alt="VoltAgent" />
+```
+
+📁 Sources: [svg](./art/skillicons/voltagent/voltagent.svg)
+
+### WezTerm
+
+<sup>256×256 · `skillicon` · `icon` · `tool` · `terminal`</sup>
+
+<p align="center"><img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/wezterm/wezterm.svg" alt="WezTerm" /></p>
+
+Skillicon for WezTerm — terminal mark on an indigo squircle.
+
+**Markdown**
+
+```markdown
+![WezTerm](https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/wezterm/wezterm.svg)
+```
+
+**HTML**
+
+```html
+<img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/skillicons/wezterm/wezterm.svg" alt="WezTerm" />
+```
+
+📁 Sources: [svg](./art/skillicons/wezterm/wezterm.svg)
+
 <!-- END CATALOG -->
-
-## Using an asset
-
-1. Find the asset in the [catalog](#catalog) above.
-2. Copy the **markdown** or **HTML** snippet straight into your README. The
-   image is served by raw.githubusercontent.com — no CDN to set up, no
-   versioning to track.
-3. The PNG renders identically to what you see on this page (it's the same
-   image). The SVG link is provided as a courtesy if you want to embed the
-   vector directly somewhere that supports SVG (GitHub README image tags
-   support SVG, but with limited CSS).
-
-## Architecture
-
-```
-                      ┌──────────────────────────────────┐
-                      │  art/<category>/<name>/          │
-   author edits ─────►│    art.yaml                      │
-                      │    <name>.svg                    │
-                      └──────────────┬───────────────────┘
-                                     │  chokidar watch
-                                     ▼
-                      ┌──────────────────────────────────┐
-                      │  apps/viewer  (Vite plugin)      │──── live React UI ────►  http://localhost:4321
-                      │    asset-watcher.plugin.ts       │      ↑   SSE /api/events
-                      │    invokes @art/svg-to-png  ─────┼──┐
-                      └──────────────────────────────────┘  │
-                                                            ▼
-                      ┌──────────────────────────────────┐
-                      │  packages/svg-to-png             │
-                      │    Playwright Chromium @ 2× scale│──── writes <name>.png ───► sibling on disk
-                      └──────────────────────────────────┘
-
-  scripts/build-docs.mjs ──► reads every art.yaml ──► regenerates this README's catalog
-```
-
-A pnpm monorepo with three workspaces:
-
-| Path                   | Package           | Purpose                                                |
-| ---------------------- | ----------------- | ------------------------------------------------------ |
-| `art/`                 | `@art/library`    | The assets themselves — one directory per asset        |
-| `apps/viewer/`         | `@art/viewer`     | TanStack Start asset-viewer at `http://localhost:4321` |
-| `packages/svg-to-png/` | `@art/svg-to-png` | Browser-based SVG → PNG library + CLI bin              |
-
-## Develop
-
-```bash
-pnpm install                                            # one-time
-pnpm exec --filter @art/viewer playwright install chromium   # one-time
-
-pnpm dev                                                # asset viewer at http://localhost:4321
-pnpm svg2png art/banners/foo/foo.svg                    # one-off SVG → PNG
-pnpm docs                                               # regenerate this README from art.yaml
-pnpm lint                                               # oxlint
-pnpm format                                             # oxfmt --write
-pnpm typecheck                                          # tsc --noEmit (recursive)
-pnpm lint:svg                                           # enforce edge-to-edge viewBox
-pnpm build                                              # build the viewer for production
-```
-
-When `pnpm dev` is running, save any `.svg` under `art/` and the watcher
-will:
-
-1. Re-render the sibling `.png` via Playwright (2× retina).
-2. Hot-reload every open browser tab via SSE.
-
-The viewer's TTY accepts:
-**`r`** restart · **`o`** open browser · **`c`** clear · **`s`** bulk svg→png · **`q`** quit.
-
-## Adding a new asset
-
-1. Create `art/<category>/<name>/` (e.g. `art/banners/banner_active/`). The
-   directory name **is** the asset name and **must** match the basename of
-   every format file inside it.
-2. Add `art.yaml` with at least a title and description:
-   ```yaml
-   title: Active
-   description: Show that a project is actively maintained.
-   alt: Active
-   tags: [banner, status]
-   # Optional:
-   # examples: [https://github.com/some/repo]
-   # legacy: true   # PNG-only — no SVG source
-   ```
-3. Author `<name>.svg` with `viewBox="0 0 W H"` (no offsets, no padding —
-   see [AGENTS.md → Image / Asset Generation](./AGENTS.md#image--asset-generation)
-   for the rule).
-4. Save. The PNG sibling is generated automatically.
-5. Lint: `pnpm lint:svg`.
-6. Regenerate the catalog: `pnpm docs`.
-
-Claude Code users: the [`svg-creator` skill](./.claude/skills/svg-creator/SKILL.md)
-automates this entire pipeline (boots the viewer, drafts the SVG, lints,
-confirms, regenerates docs) — just describe what you want.
-
-## Common tasks
-
-| I want to…                                 | Run / do                                                                |
-| ------------------------------------------ | ----------------------------------------------------------------------- |
-| **Use a banner in someone else's README**  | Copy the markdown snippet from the catalog above                        |
-| **See every asset visually**               | `pnpm dev` → http://localhost:4321                                      |
-| **Add a new asset**                        | See [Adding a new asset](#adding-a-new-asset)                           |
-| **Rename, move, or archive an asset**      | Use the `···` menu in the viewer (or POST `/api/{rename,move,archive}`) |
-| **Bulk-regenerate every PNG**              | `pnpm svg2png art/**/*.svg` (or press `s` in the viewer TTY)            |
-| **Update the README catalog**              | `pnpm docs`                                                             |
-| **Verify the README is in sync** (CI)      | `pnpm docs:check`                                                       |
-| **Check every viewBox is edge-to-edge**    | `pnpm lint:svg`                                                         |
-| **Type-check everything**                  | `pnpm typecheck`                                                        |
-| **Toggle dark / light mode in the viewer** | Sun/Moon button in the header (persists to localStorage)                |
-| **Build for production**                   | `pnpm build`                                                            |
-
-## Troubleshooting
-
-<details>
-<summary><strong><code>pnpm dev</code> fails with "Could not launch chromium"</strong></summary>
-
-Playwright's browser binary isn't installed. Run:
-
-```bash
-pnpm exec --filter @art/viewer playwright install chromium
-```
-
-</details>
-
-<details>
-<summary><strong>I added an SVG but no PNG appeared</strong></summary>
-
-The watcher only fires when `pnpm dev` is running. Either start the
-viewer, or run `pnpm svg2png art/<category>/<name>/<name>.svg` to convert
-explicitly.
-
-If the viewer **is** running and you still see no PNG, check
-`/tmp/art-asset-viewer.log` — the converter logs warnings there. The
-likeliest cause is a viewBox that doesn't start with `0 0` (the converter
-silently skips those).
-
-</details>
-
-<details>
-<summary><strong><code>pnpm typecheck</code> can't find <code>routeTree.gen.ts</code></strong></summary>
-
-That file is generated by TanStack Router on first `pnpm dev`. It's
-gitignored. Run `pnpm dev` once to generate it (Ctrl+C immediately after
-the server starts), then re-run typecheck.
-
-</details>
-
-<details>
-<summary><strong>Light/dark mode looks broken in the viewer</strong></summary>
-
-Make sure you didn't accidentally remove the
-`@custom-variant dark (&:where(.dark, .dark *));` line or the
-`@theme inline { ... }` block from
-`apps/viewer/src/styles/app.css`. Both are load-bearing for shadcn — see
-[AGENTS.md → shadcn / UI](./AGENTS.md#shadcn--ui).
-
-</details>
-
-<details>
-<summary><strong>Public banner URLs broke after restructure</strong></summary>
-
-In May 2026 the layout changed from `banners/<name>.png` to
-`art/banners/<name>/<name>.png`. The auto-generated catalog above has
-the new URLs. External READMEs that linked the old paths need updating
-to the new paths.
-
-</details>
 
 ## License
 

@@ -32,17 +32,14 @@ const RAW_BASE = `https://raw.githubusercontent.com/${REPO_SLUG}/main`
 const ASSET_EXTS = new Set(['.svg', '.png', '.jpg', '.jpeg', '.gif', '.webp'])
 const SKIP = new Set(['.archive', '_legacy', 'node_modules', '.git'])
 
-const CATEGORY_ORDER = ['banners', 'badges', 'misc']
-const CATEGORY_LABELS = {
-  banners: 'Repository Banners',
-  badges: 'Badges',
-  misc: 'General Art',
-}
-const CATEGORY_INTROS = {
-  banners: "Wide hero banners (5:1 aspect, e.g., 1280×256) for the top of a repo's README.",
-  badges: 'Compact status badges — square / pill-shaped indicators.',
-  misc: "Anything that doesn't fit a banner or badge.",
-}
+// Categories (and assets) get their title / description / sort order from
+// an `art.yaml` sitting next to them. The script is intentionally dumb:
+// it walks `art/`, picks up any directory that has assets inside, and
+// renders whatever metadata it finds. To name a category "Skillicons"
+// instead of the raw slug "skillicons", drop an `art.yaml` at
+// `art/skillicons/art.yaml` with `title:` and `description:`. Use
+// `order:` (number, lower = earlier) to control section sequencing;
+// categories without `order` sort alphabetically after ordered ones.
 
 const args = process.argv.slice(2)
 const CHECK_ONLY = args.includes('--check')
@@ -85,7 +82,9 @@ function scanCatalog(root) {
   }
 
   for (const entry of entries) {
-    if (SKIP.has(entry) || entry.startsWith('.')) continue
+    // Skip dotfiles, the archive, and underscore-prefixed dirs (used for
+    // staging / source files like `_icons/` that shouldn't render).
+    if (SKIP.has(entry) || entry.startsWith('.') || entry.startsWith('_')) continue
     const full = join(root, entry)
     let s
     try {
@@ -95,19 +94,20 @@ function scanCatalog(root) {
     }
     if (!s.isDirectory()) continue
 
+    const meta = readArtYaml(full)
     const assets = collectAssetsInGroup(full, entry)
     if (assets.length === 0) continue
-    groups.push({ name: entry, assets })
+    groups.push({ name: entry, meta, assets })
     totalAssets += assets.length
   }
 
-  // Order groups by CATEGORY_ORDER, then alphabetical for the rest
+  // Sort by `order` (from category art.yaml) ascending, then alphabetical
+  // by directory name for the rest. Categories without an `order` go after
+  // all explicitly-ordered ones.
   groups.sort((a, b) => {
-    const ai = CATEGORY_ORDER.indexOf(a.name)
-    const bi = CATEGORY_ORDER.indexOf(b.name)
-    if (ai !== -1 && bi !== -1) return ai - bi
-    if (ai !== -1) return -1
-    if (bi !== -1) return 1
+    const ao = typeof a.meta.order === 'number' ? a.meta.order : Number.POSITIVE_INFINITY
+    const bo = typeof b.meta.order === 'number' ? b.meta.order : Number.POSITIVE_INFINITY
+    if (ao !== bo) return ao - bo
     return a.name.localeCompare(b.name)
   })
 
@@ -124,7 +124,9 @@ function collectAssetsInGroup(groupDir, groupName) {
   }
 
   for (const entry of entries) {
-    if (SKIP.has(entry) || entry.startsWith('.')) continue
+    // Same skip rules as the category walk so `_src/`, `_icons/` etc.
+    // don't get treated as assets.
+    if (SKIP.has(entry) || entry.startsWith('.') || entry.startsWith('_')) continue
     const full = join(groupDir, entry)
     let s
     try {
@@ -206,11 +208,11 @@ function readTemplate(name) {
   return readFileSync(join(TEMPLATE_DIR, name), 'utf-8')
 }
 
-function renderGroup({ name, assets }) {
-  const label = CATEGORY_LABELS[name] || name
-  const intro = CATEGORY_INTROS[name] || ''
+function renderGroup({ name, meta, assets }) {
+  const title = mdText(meta.title || prettifyName(name))
+  const description = mdText(meta.description || '')
 
-  const head = `## ${label}\n\n${intro ? intro + '\n\n' : ''}`
+  const head = `## ${title}\n\n${description ? description + '\n\n' : ''}`
 
   const body = assets.length === 0 ? `_(none yet)_\n` : assets.map(renderAsset).join('\n')
 
