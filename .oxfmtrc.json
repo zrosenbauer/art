@@ -1,0 +1,22 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "ignorePatterns": [
+    "node_modules",
+    "dist",
+    ".output",
+    ".tanstack",
+    "**/routeTree.gen.ts",
+    "pnpm-lock.yaml",
+    "**/*.md",
+    "**/*.yaml",
+    "**/*.yml",
+    "art/**/*.svg",
+    "art/**/*.png"
+  ]
+}

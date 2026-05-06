@@ -1,0 +1,8 @@
+{
+  "name": "@art/library",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The art assets themselves — banners, badges, misc — each in its own directory with art.yaml metadata.",
+  "license": "MIT",
+  "type": "module"
+}

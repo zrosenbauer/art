@@ -1,0 +1,173 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+/*
+ * shadcn/ui + Tailwind v4 wiring.
+ *
+ * Three things make shadcn work in v4:
+ *   1. `@custom-variant dark` → makes `dark:foo` utilities fire on the
+ *      `.dark` class instead of the OS media query.
+ *   2. `@theme inline` → re-exports the shadcn slot variables (`--background`
+ *      etc.) as Tailwind theme colors so utilities like `bg-background`
+ *      and `text-foreground` are actually GENERATED.
+ *   3. `:root` (light) + `.dark` (dark) blocks own the slot values; brand
+ *      and status colors stay constant across modes.
+ *
+ * Default mode is dark — `<html class="dark">` is rendered server-side and
+ * the inline theme-init script in __root.tsx only removes the class if the
+ * user has explicitly chosen 'light' in localStorage.
+ *
+ * Keep palette in sync with .claude/skills/svg-creator/references/colors.md.
+ */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Brand (mode-invariant) */
+  --color-brand-primary: #7268f0;
+  --color-brand-secondary: #b667ef;
+  --color-brand-accent: #0097a7;
+  --color-brand-highlight: #eeff41;
+
+  /* Status (mode-invariant) */
+  --color-status-success: #10b981;
+  --color-status-warning: #f59e0b;
+  --color-status-error: #ef4444;
+
+  /* Fonts */
+  --font-family-sans: Geist, system-ui, sans-serif;
+  --font-family-mono: 'Geist Mono', 'SF Mono', 'Fira Code', monospace;
+
+  /* Surfaces — light */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f4f4f5;
+  --color-bg-surface: #fafafa;
+  --color-border-subtle: #e4e4e7;
+  --color-border-default: #d4d4d8;
+  --color-text-primary: #18181b;
+  --color-text-secondary: #3f3f46;
+  --color-text-muted: #71717a;
+
+  /* shadcn slot mapping — light */
+  --background: var(--color-bg-primary);
+  --foreground: var(--color-text-primary);
+  --card: var(--color-bg-surface);
+  --card-foreground: var(--color-text-primary);
+  --popover: var(--color-bg-surface);
+  --popover-foreground: var(--color-text-primary);
+  --primary: var(--color-brand-primary);
+  --primary-foreground: #ffffff;
+  --secondary: var(--color-bg-secondary);
+  --secondary-foreground: var(--color-text-primary);
+  --muted: var(--color-bg-secondary);
+  --muted-foreground: var(--color-text-muted);
+  --accent: var(--color-bg-secondary);
+  --accent-foreground: var(--color-text-primary);
+  --destructive: var(--color-status-error);
+  --border: var(--color-border-default);
+  --input: var(--color-border-default);
+  --ring: var(--color-brand-primary);
+  --radius: 0.5rem;
+
+  /* Misc — light. Grid overlay needs to stand out against any asset color. */
+  --grid-line: rgba(0, 0, 0, 0.18);
+}
+
+.dark {
+  /* Surfaces — dark */
+  --color-bg-primary: #020202;
+  --color-bg-secondary: #1f2235;
+  --color-bg-surface: #141414;
+  --color-bg-hover: #1a1f30;
+  --color-border-subtle: #2a2a2a;
+  --color-border-default: #2a2f43;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e9e9e9;
+  --color-text-muted: #9ca3af;
+
+  /* shadcn slot overrides for dark mode.
+     `--accent` is shadcn's HOVER background slot — keep it subtle. The
+     brand-highlight (lime) stays available via `bg-brand-highlight` for
+     callouts and HMR flash, but is too loud for hover states on list rows. */
+  --accent: var(--color-bg-hover);
+  --accent-foreground: var(--color-text-primary);
+
+  /* Grid overlay needs to be visible on dark images too. */
+  --grid-line: rgba(255, 255, 255, 0.18);
+}
+
+/*
+ * Re-export shadcn slots as Tailwind v4 theme colors so utilities like
+ * `bg-background`, `text-foreground`, `border-border`, `ring-ring` are
+ * generated. Without this block, those utilities don't exist and shadcn
+ * components render unstyled.
+ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand utilities — `text-brand-primary`, `bg-brand-highlight`, etc. */
+  --color-brand-primary: var(--color-brand-primary);
+  --color-brand-secondary: var(--color-brand-secondary);
+  --color-brand-accent: var(--color-brand-accent);
+  --color-brand-highlight: var(--color-brand-highlight);
+  --color-bg-surface: var(--color-bg-surface);
+
+  /* Border-radius scale */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Fonts */
+  --font-sans: var(--font-family-sans);
+  --font-mono: var(--font-family-mono);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+/* HMR flash badge — fades in/out on SSE reload */
+.hmr-flash {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  background: var(--color-brand-highlight);
+  color: var(--color-bg-primary);
+  font-family: var(--font-family-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 8px;
+  border-radius: 3px;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.hmr-flash.show {
+  opacity: 1;
+}

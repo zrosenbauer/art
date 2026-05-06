@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 256" width="1280" height="256">
+  <defs>
+    <pattern id="a-scan" width="2" height="3" patternUnits="userSpaceOnUse">
+      <rect y="2" width="2" height="1" fill="rgba(255,176,0,0.06)"/>
+    </pattern>
+    <radialGradient id="a-glow" cx="50%" cy="55%" r="60%">
+      <stop offset="0%" stop-color="rgba(255,176,0,0.10)"/>
+      <stop offset="100%" stop-color="rgba(255,176,0,0)"/>
+    </radialGradient>
+    <radialGradient id="a-vig" cx="50%" cy="50%" r="80%">
+      <stop offset="55%" stop-color="rgba(0,0,0,0)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.6)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- CRT screen base -->
+  <rect width="1280" height="256" fill="#050301"/>
+  <rect width="1280" height="256" fill="url(#a-glow)"/>
+
+  <!-- TOP STATUS BAR -->
+  <rect width="1280" height="28" fill="#140d04"/>
+  <rect y="27" width="1280" height="1" fill="#503800"/>
+  <g font-family="'Geist Mono', 'SF Mono', 'Fira Code', monospace" font-size="11" letter-spacing="2">
+    <text x="22" y="19" fill="#ffb000">ARCHIVE.SYS</text>
+    <text x="158" y="19" fill="#7a5500">v1.0</text>
+    <text x="218" y="19" fill="#7a5500">PID 0042</text>
+    <text x="328" y="19" fill="#7a5500">UPTIME ∞</text>
+    <text x="1108" y="19" fill="#cc8800">[ READ-ONLY ]</text>
+  </g>
+
+  <!-- BOTTOM STATUS BAR -->
+  <rect y="229" width="1280" height="1" fill="#503800"/>
+  <rect y="230" width="1280" height="26" fill="#140d04"/>
+  <g font-family="'Geist Mono', 'SF Mono', 'Fira Code', monospace" font-size="11" letter-spacing="2">
+    <circle cx="22" cy="245" r="3" fill="#ff3333"/>
+    <text x="36" y="249" fill="#aa7700">DORMANT</text>
+    <circle cx="138" cy="245" r="3" fill="#3a2800"/>
+    <text x="152" y="249" fill="#5a4000">SYNC</text>
+    <circle cx="222" cy="245" r="3" fill="#3a2800"/>
+    <text x="236" y="249" fill="#5a4000">CI</text>
+    <text x="1132" y="249" fill="#7a5500">END_OF_LINE</text>
+  </g>
+
+  <!-- BIG TITLE -->
+  <text x="640" y="146" text-anchor="middle"
+        font-family="'Geist Mono', 'SF Mono', 'Fira Code', monospace"
+        font-size="78" font-weight="900" fill="#ffb000" letter-spacing="22">ARCHIVED</text>
+
+  <!-- TERMINAL PROMPT SUBTITLE -->
+  <text x="640" y="190" text-anchor="middle"
+        font-family="'Geist Mono', 'SF Mono', 'Fira Code', monospace"
+        font-size="13" letter-spacing="3" fill="#cc8800">
+    <tspan fill="#7a5500">&gt; </tspan>PROJECT NO LONGER MAINTAINED<tspan fill="#ffb000">█</tspan>
+  </text>
+
+  <!-- SCANLINES + VIGNETTE on top -->
+  <rect width="1280" height="256" fill="url(#a-scan)"/>
+  <rect width="1280" height="256" fill="url(#a-vig)"/>
+</svg>

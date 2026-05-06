@@ -1,0 +1,33 @@
+{
+  "name": "@zrosenbauer/art",
+  "version": "0.0.0",
+  "private": true,
+  "description": "GitHub banners, badges, and other art for @zrosenbauer projects.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter @art/viewer dev",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "svg2png": "node packages/svg-to-png/bin.mjs",
+    "docs": "node scripts/build-docs.mjs",
+    "docs:check": "node scripts/build-docs.mjs --check",
+    "lint:svg": "node .claude/skills/svg-creator/scripts/lint-viewbox.mjs art",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt --write",
+    "format:check": "oxfmt --check",
+    "test": "pnpm -r --if-present test && vitest run --config scripts/vitest.config.mjs",
+    "test:viewer": "pnpm --filter @art/viewer test"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.1",
+    "oxfmt": "^0.48.0",
+    "oxlint": "^1.63.0",
+    "vitest": "^4.1.5"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.15.0"
+}

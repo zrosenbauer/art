@@ -1,0 +1,30 @@
+{
+  "name": "@art/svg-to-png",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Browser-based SVG → PNG renderer with strict edge-to-edge viewBox enforcement.",
+  "license": "MIT",
+  "bin": {
+    "svg-to-png": "./bin.mjs"
+  },
+  "files": [
+    "src",
+    "bin.mjs",
+    "README.md"
+  ],
+  "type": "module",
+  "main": "./src/index.mjs",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.mjs"
+    }
+  },
+  "scripts": {
+    "typecheck": "node --check bin.mjs && node --check src/index.mjs"
+  },
+  "dependencies": {
+    "playwright-chromium": "^1.59.1"
+  }
+}

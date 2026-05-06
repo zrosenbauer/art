@@ -24,3 +24,20 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Node / pnpm
+node_modules/
+.pnpm-store/
+*.log
+
+# Asset viewer runtime log
+/tmp/art-asset-viewer.log
+
+# Monorepo build artifacts
+apps/*/dist/
+apps/*/.output/
+apps/*/.tanstack/
+apps/*/src/routeTree.gen.ts
+
+# Archive holding pen (assets the viewer "archives" into)
+.archive/

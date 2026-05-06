@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 256" width="1280" height="256">
+  <defs>
+    <pattern id="u-scan" width="2" height="3" patternUnits="userSpaceOnUse">
+      <rect y="2" width="2" height="1" fill="rgba(0,255,102,0.06)"/>
+    </pattern>
+    <radialGradient id="u-glow" cx="50%" cy="55%" r="60%">
+      <stop offset="0%" stop-color="rgba(0,255,102,0.10)"/>
+      <stop offset="100%" stop-color="rgba(0,255,102,0)"/>
+    </radialGradient>
+    <radialGradient id="u-vig" cx="50%" cy="50%" r="80%">
+      <stop offset="55%" stop-color="rgba(0,0,0,0)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.6)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- CRT screen base -->
+  <rect width="1280" height="256" fill="#010503"/>
+  <rect width="1280" height="256" fill="url(#u-glow)"/>
+
+  <!-- TOP STATUS BAR -->
+  <rect width="1280" height="28" fill="#04140a"/>
+  <rect y="27" width="1280" height="1" fill="#005a25"/>
+  <g font-family="'Geist Mono', 'SF Mono', 'Fira Code', monospace" font-size="11" letter-spacing="2">
+    <text x="22" y="19" fill="#00ff66">BUILD.SH</text>
+    <text x="128" y="19" fill="#007a33">PID 0007</text>
+    <text x="240" y="19" fill="#007a33">CC=gcc</text>
+    <text x="338" y="19" fill="#007a33">JOBS=8</text>
+    <text x="1090" y="19" fill="#ffb000">[ BUILDING... ]</text>
+  </g>
+
+  <!-- BOTTOM STATUS BAR -->
+  <rect y="229" width="1280" height="1" fill="#005a25"/>
+  <rect y="230" width="1280" height="26" fill="#04140a"/>
+  <g font-family="'Geist Mono', 'SF Mono', 'Fira Code', monospace" font-size="11" letter-spacing="2">
+    <circle cx="22" cy="245" r="3" fill="#ffb000"/>
+    <text x="36" y="249" fill="#aa7700">BUILDING</text>
+    <circle cx="146" cy="245" r="3" fill="#00ff66"/>
+    <text x="160" y="249" fill="#007a33">CC OK</text>
+    <circle cx="244" cy="245" r="3" fill="#ff3333"/>
+    <text x="258" y="249" fill="#aa3333">14 WARN</text>
+    <text x="1108" y="249" fill="#aa7700">DO NOT MERGE</text>
+  </g>
+
+  <!-- BIG TITLE -->
+  <text x="640" y="118" text-anchor="middle"
+        font-family="'Geist Mono', 'SF Mono', 'Fira Code', monospace"
+        font-size="58" font-weight="900" fill="#00ff66" letter-spacing="14">UNDER CONSTRUCTION</text>
+
+  <!-- PROGRESS BAR (rect-based for layout reliability) -->
+  <g transform="translate(440, 140)">
+    <rect width="400" height="14" fill="#04140a" stroke="#00ff66" stroke-width="1"/>
+    <rect x="2" y="2" width="236" height="10" fill="#00ff66"/>
+    <text x="200" y="34" text-anchor="middle"
+          font-family="'Geist Mono', 'SF Mono', 'Fira Code', monospace"
+          font-size="11" letter-spacing="3" fill="#007a33">59% :: 17/29 :: ETA TOMORROW</text>
+  </g>
+
+  <!-- TERMINAL PROMPT SUBTITLE -->
+  <text x="640" y="200" text-anchor="middle"
+        font-family="'Geist Mono', 'SF Mono', 'Fira Code', monospace"
+        font-size="12" letter-spacing="3" fill="#00aa44">
+    <tspan fill="#005a22">&gt; </tspan>compiling sources :: do not interrupt<tspan fill="#00ff66">█</tspan>
+  </text>
+
+  <!-- SCANLINES + VIGNETTE on top -->
+  <rect width="1280" height="256" fill="url(#u-scan)"/>
+  <rect width="1280" height="256" fill="url(#u-vig)"/>
+</svg>

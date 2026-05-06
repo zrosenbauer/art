@@ -1,0 +1,53 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/main/npm/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "unicorn", "promise", "import"],
+  "categories": {
+    "correctness": "error",
+    "perf": "off",
+    "suspicious": "warn",
+    "style": "off"
+  },
+  "rules": {
+    "no-console": "off",
+    "no-debugger": "error",
+    "no-control-regex": "off",
+    "no-await-in-loop": "off",
+    "no-empty": ["warn", { "allowEmptyCatch": true }],
+    "no-unused-vars": "warn",
+    "typescript/no-explicit-any": "off",
+    "typescript/no-non-null-assertion": "off",
+    "typescript/triple-slash-reference": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-key": "error",
+    "react/no-unescaped-entities": "off",
+    "react/exhaustive-deps": "warn",
+    "react/rules-of-hooks": "error",
+    "no-underscore-dangle": "off",
+    "no-array-sort": "off",
+    "no-array-reverse": "off",
+    "consistent-function-scoping": "off",
+    "no-unassigned-import": "off",
+    "no-named-as-default-member": "off",
+    "no-shadow": "off",
+    "promise/no-multiple-resolved": "off",
+    "unicorn/no-null": "off",
+    "unicorn/no-process-exit": "off",
+    "unicorn/prefer-node-protocol": "warn",
+    "unicorn/prefer-array-flat-map": "warn",
+    "unicorn/prefer-module": "off",
+    "unicorn/no-empty-file": "off",
+    "unicorn/filename-case": "off",
+    "unicorn/prefer-top-level-await": "off",
+    "import/no-default-export": "off"
+  },
+  "ignorePatterns": [
+    "node_modules",
+    "dist",
+    ".output",
+    ".tanstack",
+    "**/routeTree.gen.ts",
+    "pnpm-lock.yaml",
+    "art/**/*.svg",
+    "art/**/*.png"
+  ]
+}
