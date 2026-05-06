@@ -1,21 +1,30 @@
-# 🎨 Art
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/banners/banner_art/banner_art.png" alt="Art — by @zrosenbauer" />
+</p>
 
-> GitHub banners, badges, and miscellaneous visual art for [@zrosenbauer](https://github.com/zrosenbauer) projects.
+<p align="center">
+  <strong>GitHub banners, badges, and visual art</strong> for <a href="https://github.com/zrosenbauer">@zrosenbauer</a> projects.<br/>
+  <em>Find one. Copy the snippet. Paste it into your README.</em>
+</p>
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-7268f0)](./LICENSE)
-[![Node ≥ 20](https://img.shields.io/badge/node-%E2%89%A5%2020-7268f0)](https://nodejs.org)
-[![Built with TanStack Start](https://img.shields.io/badge/built_with-TanStack_Start-7268f0)](https://tanstack.com/start)
-[![Style: shadcn/ui](https://img.shields.io/badge/style-shadcn%2Fui-7268f0)](https://ui.shadcn.com)
+<p align="center">
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-c026d3?style=flat-square" alt="MIT" /></a>
+  <a href="#catalog"><img src="https://img.shields.io/badge/catalog-browse-ec4899?style=flat-square" alt="Browse catalog" /></a>
+  <a href="https://github.com/zrosenbauer"><img src="https://img.shields.io/badge/by-%40zrosenbauer-f97316?style=flat-square" alt="@zrosenbauer" /></a>
+</p>
 
-Each asset lives in its own directory under `art/<category>/<name>/` with an
-`art.yaml` describing it (title, description, alt, tags). Drop an SVG into
-that directory and the watcher renders a 2× retina PNG sibling
-automatically. Then paste the snippet from the catalog below into any
-README.
+---
 
-**Quick links** · [Asset catalog](#catalog) · [Using an asset](#using-an-asset) · [Architecture](#architecture) · [Develop](#develop) · [Adding a new asset](#adding-a-new-asset) · [Common tasks](#common-tasks) · [Troubleshooting](#troubleshooting) · [AGENTS.md](./AGENTS.md)
+## How to use
 
-> ⚠ **Don't edit the catalog by hand.** The sections between the
-> `<!-- BEGIN CATALOG -->` and `<!-- END CATALOG -->` markers are
-> regenerated from `art.yaml` by `pnpm docs`. Edit the YAML, rerun the
-> script.
+1. Browse the [catalog](#catalog) below.
+2. Copy the **Markdown** or **HTML** snippet under any asset.
+3. Paste it into your README. Done.
+
+Images are served straight from `raw.githubusercontent.com` — no CDN, no versioning, just a URL:
+
+```markdown
+![Active](https://raw.githubusercontent.com/zrosenbauer/art/main/art/banners/banner_active/banner_active.png)
+```
+
+Want to add or remix something? See [CONTRIBUTING.md](./CONTRIBUTING.md).

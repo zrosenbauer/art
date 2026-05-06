@@ -1,0 +1,628 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 256" width="1280" height="256">
+  <defs>
+    <!-- Deep dystopian sky: black → indigo → faint magenta horizon -->
+    <linearGradient id="cp-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#020205"/>
+      <stop offset="35%"  stop-color="#04040d"/>
+      <stop offset="65%"  stop-color="#0a0820"/>
+      <stop offset="85%"  stop-color="#1c0a36"/>
+      <stop offset="100%" stop-color="#2a0a48"/>
+    </linearGradient>
+
+    <!-- Hot magenta haze at horizon, very subtle -->
+    <radialGradient id="cp-horizon" cx="50%" cy="100%" r="65%">
+      <stop offset="0%"   stop-color="rgba(255,80,160,0.22)"/>
+      <stop offset="60%"  stop-color="rgba(180,40,120,0.08)"/>
+      <stop offset="100%" stop-color="rgba(180,40,120,0)"/>
+    </radialGradient>
+
+    <!-- Cyan rim glow on the opposite side -->
+    <radialGradient id="cp-rim" cx="15%" cy="95%" r="40%">
+      <stop offset="0%"   stop-color="rgba(80,210,255,0.18)"/>
+      <stop offset="100%" stop-color="rgba(80,210,255,0)"/>
+    </radialGradient>
+
+    <radialGradient id="cp-moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="rgba(220,200,160,0.45)"/>
+      <stop offset="60%"  stop-color="rgba(220,200,160,0.07)"/>
+      <stop offset="100%" stop-color="rgba(220,200,160,0)"/>
+    </radialGradient>
+
+    <!-- Title gradient: violet → magenta → orange → amber.
+         userSpaceOnUse so a single gradient flows continuously across
+         every block instead of remapping per-rect. -->
+    <linearGradient id="cp-title" x1="464" y1="0" x2="816" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#a855f7"/>
+      <stop offset="28%"  stop-color="#c026d3"/>
+      <stop offset="55%"  stop-color="#ec4899"/>
+      <stop offset="80%"  stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+
+
+    <!-- Atmospheric haze near street level -->
+    <linearGradient id="cp-haze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="rgba(0,0,0,0)"/>
+      <stop offset="60%"  stop-color="rgba(255,90,180,0.05)"/>
+      <stop offset="100%" stop-color="rgba(125,207,255,0.10)"/>
+    </linearGradient>
+
+    <radialGradient id="cp-vig" cx="50%" cy="50%" r="80%">
+      <stop offset="60%"  stop-color="rgba(0,0,0,0)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.7)"/>
+    </radialGradient>
+
+    <pattern id="cp-grain" width="3" height="3" patternUnits="userSpaceOnUse">
+      <rect width="3" height="3" fill="rgba(0,0,0,0)"/>
+      <rect x="0" y="0" width="1" height="1" fill="rgba(192,202,245,0.022)"/>
+    </pattern>
+
+    <!-- Scanlines for that CRT/cyberpunk feel -->
+    <pattern id="cp-scan" width="2" height="3" patternUnits="userSpaceOnUse">
+      <rect y="2" width="2" height="1" fill="rgba(125,207,255,0.04)"/>
+    </pattern>
+
+    <!-- Reusable title-cell silhouette: every block defined once, no fill
+         or stroke, so <use> can re-color it for the shadow vs the real
+         gradient render. -->
+    <g id="cp-titleCells">
+      <!-- ===== A ===== -->
+      <rect x="496" y="68"  width="16" height="16"/>
+      <rect x="512" y="68"  width="16" height="16"/>
+      <rect x="528" y="68"  width="16" height="16"/>
+      <rect x="480" y="84"  width="16" height="16"/>
+      <rect x="496" y="84"  width="16" height="16"/>
+      <rect x="512" y="84"  width="16" height="16"/>
+      <rect x="528" y="84"  width="16" height="16"/>
+      <rect x="544" y="84"  width="16" height="16"/>
+      <rect x="464" y="100" width="16" height="16"/>
+      <rect x="480" y="100" width="16" height="16"/>
+      <rect x="544" y="100" width="16" height="16"/>
+      <rect x="560" y="100" width="16" height="16"/>
+      <rect x="464" y="116" width="16" height="16"/>
+      <rect x="480" y="116" width="16" height="16"/>
+      <rect x="496" y="116" width="16" height="16"/>
+      <rect x="512" y="116" width="16" height="16"/>
+      <rect x="528" y="116" width="16" height="16"/>
+      <rect x="544" y="116" width="16" height="16"/>
+      <rect x="560" y="116" width="16" height="16"/>
+      <rect x="464" y="132" width="16" height="16"/>
+      <rect x="480" y="132" width="16" height="16"/>
+      <rect x="544" y="132" width="16" height="16"/>
+      <rect x="560" y="132" width="16" height="16"/>
+      <rect x="464" y="148" width="16" height="16"/>
+      <rect x="480" y="148" width="16" height="16"/>
+      <rect x="544" y="148" width="16" height="16"/>
+      <rect x="560" y="148" width="16" height="16"/>
+      <rect x="464" y="164" width="16" height="16"/>
+      <rect x="480" y="164" width="16" height="16"/>
+      <rect x="544" y="164" width="16" height="16"/>
+      <rect x="560" y="164" width="16" height="16"/>
+
+      <!-- ===== R ===== -->
+      <rect x="592" y="68"  width="16" height="16"/>
+      <rect x="608" y="68"  width="16" height="16"/>
+      <rect x="624" y="68"  width="16" height="16"/>
+      <rect x="640" y="68"  width="16" height="16"/>
+      <rect x="656" y="68"  width="16" height="16"/>
+      <rect x="672" y="68"  width="16" height="16"/>
+      <rect x="592" y="84"  width="16" height="16"/>
+      <rect x="608" y="84"  width="16" height="16"/>
+      <rect x="672" y="84"  width="16" height="16"/>
+      <rect x="688" y="84"  width="16" height="16"/>
+      <rect x="592" y="100" width="16" height="16"/>
+      <rect x="608" y="100" width="16" height="16"/>
+      <rect x="672" y="100" width="16" height="16"/>
+      <rect x="688" y="100" width="16" height="16"/>
+      <rect x="592" y="116" width="16" height="16"/>
+      <rect x="608" y="116" width="16" height="16"/>
+      <rect x="624" y="116" width="16" height="16"/>
+      <rect x="640" y="116" width="16" height="16"/>
+      <rect x="656" y="116" width="16" height="16"/>
+      <rect x="672" y="116" width="16" height="16"/>
+      <rect x="592" y="132" width="16" height="16"/>
+      <rect x="608" y="132" width="16" height="16"/>
+      <rect x="640" y="132" width="16" height="16"/>
+      <rect x="656" y="132" width="16" height="16"/>
+      <rect x="592" y="148" width="16" height="16"/>
+      <rect x="608" y="148" width="16" height="16"/>
+      <rect x="656" y="148" width="16" height="16"/>
+      <rect x="672" y="148" width="16" height="16"/>
+      <rect x="592" y="164" width="16" height="16"/>
+      <rect x="608" y="164" width="16" height="16"/>
+      <rect x="672" y="164" width="16" height="16"/>
+      <rect x="688" y="164" width="16" height="16"/>
+
+      <!-- ===== T ===== -->
+      <rect x="720" y="68"  width="16" height="16"/>
+      <rect x="736" y="68"  width="16" height="16"/>
+      <rect x="752" y="68"  width="16" height="16"/>
+      <rect x="768" y="68"  width="16" height="16"/>
+      <rect x="784" y="68"  width="16" height="16"/>
+      <rect x="800" y="68"  width="16" height="16"/>
+      <rect x="720" y="84"  width="16" height="16"/>
+      <rect x="736" y="84"  width="16" height="16"/>
+      <rect x="752" y="84"  width="16" height="16"/>
+      <rect x="768" y="84"  width="16" height="16"/>
+      <rect x="784" y="84"  width="16" height="16"/>
+      <rect x="800" y="84"  width="16" height="16"/>
+      <rect x="752" y="100" width="16" height="16"/>
+      <rect x="768" y="100" width="16" height="16"/>
+      <rect x="752" y="116" width="16" height="16"/>
+      <rect x="768" y="116" width="16" height="16"/>
+      <rect x="752" y="132" width="16" height="16"/>
+      <rect x="768" y="132" width="16" height="16"/>
+      <rect x="752" y="148" width="16" height="16"/>
+      <rect x="768" y="148" width="16" height="16"/>
+      <rect x="752" y="164" width="16" height="16"/>
+      <rect x="768" y="164" width="16" height="16"/>
+    </g>
+  </defs>
+
+  <!-- SKY -->
+  <rect width="1280" height="256" fill="url(#cp-sky)"/>
+  <rect width="1280" height="256" fill="url(#cp-horizon)"/>
+  <rect width="1280" height="256" fill="url(#cp-rim)"/>
+
+  <!-- STARS — sparse, cool -->
+  <g fill="#c0caf5">
+    <circle cx="62"   cy="18"  r="0.7"/>
+    <circle cx="138"  cy="42"  r="0.5" opacity="0.6"/>
+    <circle cx="216"  cy="14"  r="0.9"/>
+    <circle cx="294"  cy="56"  r="0.6" opacity="0.7"/>
+    <circle cx="372"  cy="22"  r="0.7"/>
+    <circle cx="448"  cy="48"  r="0.5" opacity="0.55"/>
+    <circle cx="528"  cy="16"  r="0.8"/>
+    <circle cx="604"  cy="40"  r="0.6" opacity="0.6"/>
+    <circle cx="688"  cy="20"  r="0.5"/>
+    <circle cx="762"  cy="52"  r="0.7" opacity="0.7"/>
+    <circle cx="844"  cy="14"  r="0.5"/>
+    <circle cx="922"  cy="44"  r="0.8"/>
+    <circle cx="1004" cy="22"  r="0.5" opacity="0.6"/>
+    <circle cx="1148" cy="48"  r="0.7"/>
+    <circle cx="1226" cy="18"  r="0.5"/>
+    <circle cx="1264" cy="38"  r="0.6" opacity="0.6"/>
+  </g>
+
+  <!-- DRONE / AIRSHIP LIGHTS — small red & cyan blinkers higher in the sky -->
+  <g>
+    <circle cx="180"  cy="74"  r="1.4" fill="#ff3355"/>
+    <circle cx="180"  cy="74"  r="3"   fill="#ff3355" opacity="0.25"/>
+    <circle cx="486"  cy="58"  r="1.2" fill="#7dcfff"/>
+    <circle cx="486"  cy="58"  r="2.6" fill="#7dcfff" opacity="0.25"/>
+    <circle cx="822"  cy="86"  r="1.4" fill="#ff3355"/>
+    <circle cx="822"  cy="86"  r="3"   fill="#ff3355" opacity="0.25"/>
+    <circle cx="1080" cy="44"  r="1.2" fill="#7dcfff"/>
+    <circle cx="1080" cy="44"  r="2.6" fill="#7dcfff" opacity="0.25"/>
+  </g>
+
+  <!-- MOON — small, pale, distant -->
+  <circle cx="1130" cy="56" r="58" fill="url(#cp-moonGlow)"/>
+  <circle cx="1130" cy="56" r="20" fill="#dcc8a0" opacity="0.92"/>
+  <circle cx="1124" cy="50" r="2.5" fill="#a89070" opacity="0.55"/>
+  <circle cx="1136" cy="62" r="3"   fill="#a89070" opacity="0.45"/>
+  <circle cx="1126" cy="64" r="1.5" fill="#a89070" opacity="0.45"/>
+
+  <!-- ============================================================ -->
+  <!-- DISTANT MEGA-ARCOLOGIES — far back, super dark, super tall -->
+  <!-- ============================================================ -->
+  <g fill="#0a0817" opacity="0.85">
+    <!-- Stepped ziggurat (far left) -->
+    <path d="M 40 256 L 40 188 L 60 188 L 60 168 L 84 168 L 84 148 L 108 148 L 108 128 L 132 128 L 132 148 L 156 148 L 156 168 L 180 168 L 180 188 L 200 188 L 200 256 Z"/>
+    <!-- Inverted pyramid + plinth (mid) -->
+    <path d="M 590 256 L 590 184 L 580 184 L 620 132 L 660 184 L 650 184 L 650 256 Z"/>
+    <!-- Distant mega-tower with cap (right-of-center) -->
+    <path d="M 920 256 L 920 130 L 932 130 L 932 110 L 968 110 L 968 130 L 980 130 L 980 256 Z"/>
+    <!-- Far-right mega arcology -->
+    <path d="M 1180 256 L 1180 156 L 1196 156 L 1196 138 L 1216 138 L 1216 120 L 1244 120 L 1244 138 L 1264 138 L 1264 156 L 1280 156 L 1280 256 Z"/>
+  </g>
+
+  <!-- Distant tower antennae -->
+  <g stroke="#0a0817" stroke-width="1" opacity="0.85">
+    <line x1="120" y1="128" x2="120" y2="100"/>
+    <line x1="950" y1="110" x2="950" y2="78"/>
+    <line x1="1230" y1="120" x2="1230" y2="92"/>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- MID-DEPTH BUILDINGS — varied silhouettes -->
+  <!-- ============================================================ -->
+  <g fill="#080612">
+
+    <!-- Twin spires + sky-bridge (left section) -->
+    <rect x="232" y="148" width="14" height="108"/>
+    <rect x="270" y="156" width="14" height="100"/>
+    <rect x="246" y="200" width="24" height="6"/>
+    <rect x="246" y="180" width="24" height="3"/>
+
+    <!-- Tilted parallelogram tower -->
+    <path d="M 308 256 L 320 144 L 350 142 L 342 256 Z"/>
+
+    <!-- Cantilever multi-tier (asymmetric) -->
+    <rect x="370" y="158" width="28" height="98"/>
+    <rect x="354" y="186" width="14" height="70"/>
+    <rect x="398" y="174" width="20" height="82"/>
+    <rect x="398" y="200" width="36" height="14"/>
+
+    <!-- Dome + antenna -->
+    <path d="M 462 256 L 462 188 A 24 24 0 0 1 510 188 L 510 256 Z"/>
+    <rect x="484" y="144" width="2" height="44"/>
+    <rect x="478" y="168" width="14" height="2"/>
+
+    <!-- Wide squat block with horizontal banding -->
+    <rect x="528" y="174" width="56" height="82"/>
+
+    <!-- Tall narrow hologram tower -->
+    <rect x="700" y="138" width="20" height="118"/>
+    <rect x="724" y="160" width="6"  height="96"/>
+
+    <!-- Stepped sci-fi tower -->
+    <path d="M 758 256 L 758 168 L 776 168 L 776 152 L 802 152 L 802 168 L 820 168 L 820 256 Z"/>
+
+    <!-- Cylindrical tower (rounded) -->
+    <rect x="848" y="156" width="28" height="100" rx="2"/>
+    <rect x="846" y="166" width="32" height="2"/>
+    <rect x="846" y="186" width="32" height="2"/>
+    <rect x="846" y="206" width="32" height="2"/>
+    <rect x="846" y="226" width="32" height="2"/>
+
+    <!-- Antenna farm / crane cluster -->
+    <rect x="1012" y="172" width="16" height="84"/>
+    <rect x="1018" y="140" width="2" height="32"/>
+    <rect x="1020" y="146" width="2" height="26"/>
+    <rect x="1014" y="156" width="14" height="1"/>
+    <rect x="1010" y="148" width="20" height="1"/>
+
+    <!-- Wide low complex with chimneys -->
+    <rect x="1054" y="190" width="52" height="66"/>
+    <rect x="1062" y="172" width="6"  height="18"/>
+    <rect x="1080" y="166" width="6"  height="24"/>
+    <rect x="1094" y="178" width="6"  height="12"/>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- FOREGROUND BUILDINGS — darkest, closest, varied silhouettes -->
+  <!-- ============================================================ -->
+  <g fill="#020208">
+
+    <!-- Left foreground stack: irregular slab -->
+    <path d="M 0 256 L 0 168 L 22 168 L 22 154 L 50 154 L 50 168 L 74 168 L 74 200 L 92 200 L 92 256 Z"/>
+
+    <!-- Tall arcology with tiered top -->
+    <path d="M 96 256 L 96 142 L 126 142 L 126 124 L 144 124 L 144 142 L 168 142 L 168 256 Z"/>
+
+    <!-- Diagonal/leaning tower -->
+    <path d="M 172 256 L 188 168 L 216 162 L 210 256 Z"/>
+
+    <!-- Industrial bunker block -->
+    <rect x="220" y="206" width="44" height="50"/>
+
+    <!-- Low foreground silhouette with stair-step -->
+    <path d="M 268 256 L 268 196 L 290 196 L 290 184 L 320 184 L 320 196 L 348 196 L 348 256 Z"/>
+
+    <!-- Hologram billboard tower (left of center) -->
+    <rect x="358" y="150" width="32" height="106"/>
+    <rect x="392" y="170" width="6"  height="86"/>
+
+    <!-- Multi-tier asymmetric mega -->
+    <path d="M 410 256 L 410 178 L 426 178 L 426 162 L 462 162 L 462 178 L 478 178 L 478 256 Z"/>
+
+    <!-- Wide bunker -->
+    <rect x="488" y="208" width="58" height="48"/>
+
+    <!-- Cluster around title (kept low so title stays clear) -->
+    <rect x="554" y="210" width="34" height="46"/>
+    <rect x="592" y="220" width="24" height="36"/>
+    <rect x="620" y="214" width="32" height="42"/>
+    <rect x="664" y="222" width="28" height="34"/>
+    <rect x="696" y="216" width="26" height="40"/>
+    <rect x="730" y="220" width="34" height="36"/>
+
+    <!-- Right-of-center: tall asymmetric tower -->
+    <path d="M 770 256 L 770 154 L 790 154 L 790 138 L 818 138 L 818 154 L 832 154 L 832 256 Z"/>
+
+    <!-- Tilted parallelogram (right) -->
+    <path d="M 838 256 L 856 168 L 882 164 L 870 256 Z"/>
+
+    <!-- Wide multi-window block -->
+    <path d="M 886 256 L 886 174 L 916 174 L 916 156 L 946 156 L 946 174 L 970 174 L 970 256 Z"/>
+
+    <!-- Cylindrical foreground tower -->
+    <rect x="976" y="166" width="22" height="90" rx="2"/>
+
+    <!-- Sci-fi cantilever -->
+    <rect x="1004" y="150" width="20" height="106"/>
+    <rect x="998"  y="186" width="32" height="10"/>
+
+    <!-- Tallest mega-tower on right-front (focal silhouette) -->
+    <path d="M 1036 256 L 1036 110 L 1052 110 L 1052 90 L 1078 90 L 1078 110 L 1094 110 L 1094 256 Z"/>
+
+    <!-- Step-down pyramid-ish -->
+    <path d="M 1100 256 L 1100 188 L 1118 188 L 1118 170 L 1140 170 L 1140 188 L 1158 188 L 1158 256 Z"/>
+
+    <!-- Industrial cluster (right) -->
+    <rect x="1162" y="200" width="42" height="56"/>
+    <rect x="1170" y="178" width="6"  height="22"/>
+    <rect x="1184" y="172" width="6"  height="28"/>
+
+    <!-- Far-right stepped block -->
+    <path d="M 1210 256 L 1210 184 L 1228 184 L 1228 172 L 1252 172 L 1252 184 L 1268 184 L 1268 256 Z"/>
+  </g>
+
+  <!-- Antenna spires on tallest -->
+  <g stroke="#020208" stroke-width="1.5">
+    <line x1="1065" y1="90"  x2="1065" y2="58"/>
+    <line x1="135"  y1="124" x2="135"  y2="92"/>
+    <line x1="803"  y1="138" x2="803"  y2="108"/>
+    <line x1="494"  y1="144" x2="494"  y2="118"/>
+  </g>
+  <g fill="#ff5d8f">
+    <circle cx="1065" cy="56" r="1.6"/>
+    <circle cx="1065" cy="56" r="3.5" opacity="0.45"/>
+  </g>
+  <g fill="#7dcfff">
+    <circle cx="135" cy="90" r="1.4"/>
+    <circle cx="135" cy="90" r="3"   opacity="0.4"/>
+  </g>
+  <g fill="#ff9e64">
+    <circle cx="803" cy="106" r="1.4"/>
+    <circle cx="803" cy="106" r="3"   opacity="0.4"/>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- NEON EDGE STRIPS on building tops/edges (cyberpunk signature) -->
+  <!-- ============================================================ -->
+  <g>
+    <!-- Cyan rim on tall arcology (left) -->
+    <rect x="126" y="124" width="18" height="1.4" fill="#7dcfff"/>
+    <rect x="96"  y="142" width="72" height="1"   fill="#7dcfff" opacity="0.6"/>
+    <!-- Magenta rim on tallest mega-tower -->
+    <rect x="1052" y="90"  width="26" height="1.4" fill="#ff5d8f"/>
+    <rect x="1036" y="110" width="58" height="1"   fill="#ff5d8f" opacity="0.6"/>
+    <!-- Cyan strip on right tower -->
+    <rect x="790" y="138" width="28" height="1.4" fill="#7dcfff"/>
+    <!-- Magenta strip on cantilever -->
+    <rect x="1004" y="150" width="20" height="1"   fill="#ff5d8f"/>
+    <!-- Yellow rim on dome -->
+    <rect x="462" y="188" width="48" height="1"   fill="#ff9e64" opacity="0.7"/>
+    <!-- Cyan band on cylindrical tower -->
+    <rect x="976" y="166" width="22" height="1.2" fill="#7dcfff"/>
+    <!-- Pink band on stepped sci-fi -->
+    <rect x="776" y="152" width="26" height="1"   fill="#ff5d8f"/>
+  </g>
+
+  <!-- HOLOGRAM BILLBOARDS — vertical glyph strips -->
+  <g>
+    <!-- Strip 1: cyan (left tower) -->
+    <rect x="376" y="158" width="2" height="86" fill="#7dcfff" opacity="0.85"/>
+    <g fill="#7dcfff">
+      <rect x="362" y="160" width="3" height="3"/>
+      <rect x="368" y="172" width="3" height="3"/>
+      <rect x="362" y="184" width="3" height="3"/>
+      <rect x="368" y="196" width="3" height="3"/>
+      <rect x="362" y="208" width="3" height="3"/>
+      <rect x="368" y="220" width="3" height="3"/>
+      <rect x="362" y="232" width="3" height="3"/>
+    </g>
+
+    <!-- Strip 2: hot pink (right of title) -->
+    <rect x="722" y="148" width="2" height="100" fill="#ff5d8f" opacity="0.85"/>
+    <g fill="#ff5d8f">
+      <rect x="708" y="150" width="3" height="3"/>
+      <rect x="714" y="162" width="3" height="3"/>
+      <rect x="708" y="174" width="3" height="3"/>
+      <rect x="714" y="186" width="3" height="3"/>
+      <rect x="708" y="198" width="3" height="3"/>
+      <rect x="714" y="210" width="3" height="3"/>
+      <rect x="708" y="222" width="3" height="3"/>
+      <rect x="714" y="234" width="3" height="3"/>
+    </g>
+
+    <!-- Strip 3: yellow (mid-right) -->
+    <rect x="996" y="160" width="2" height="80" fill="#ffcc66" opacity="0.85"/>
+  </g>
+
+  <!-- WINDOWS — denser, more neon palette than before -->
+  <!-- Warm yellow (less common) -->
+  <g fill="#ffcc66">
+    <rect x="6"   y="180" width="2.5" height="2.5"/>
+    <rect x="14"  y="194" width="2.5" height="2.5"/>
+    <rect x="34"  y="174" width="2.5" height="2.5"/>
+    <rect x="40"  y="190" width="2.5" height="2.5"/>
+    <rect x="60"  y="186" width="2.5" height="2.5"/>
+    <rect x="80"  y="208" width="2.5" height="2.5"/>
+    <rect x="106" y="156" width="2.5" height="2.5"/>
+    <rect x="118" y="170" width="2.5" height="2.5"/>
+    <rect x="132" y="154" width="2.5" height="2.5"/>
+    <rect x="156" y="172" width="2.5" height="2.5"/>
+    <rect x="180" y="180" width="2.5" height="2.5"/>
+    <rect x="200" y="200" width="2.5" height="2.5"/>
+    <rect x="232" y="216" width="2.5" height="2.5"/>
+    <rect x="252" y="222" width="2.5" height="2.5"/>
+    <rect x="276" y="208" width="2.5" height="2.5"/>
+    <rect x="296" y="220" width="2.5" height="2.5"/>
+    <rect x="316" y="208" width="2.5" height="2.5"/>
+    <rect x="338" y="216" width="2.5" height="2.5"/>
+    <rect x="360" y="180" width="2.5" height="2.5"/>
+    <rect x="372" y="200" width="2.5" height="2.5"/>
+    <rect x="380" y="216" width="2.5" height="2.5"/>
+    <rect x="416" y="190" width="2.5" height="2.5"/>
+    <rect x="446" y="184" width="2.5" height="2.5"/>
+    <rect x="466" y="208" width="2.5" height="2.5"/>
+    <rect x="498" y="216" width="2.5" height="2.5"/>
+    <rect x="528" y="222" width="2.5" height="2.5"/>
+    <rect x="566" y="226" width="2.5" height="2.5"/>
+    <rect x="600" y="232" width="2.5" height="2.5"/>
+    <rect x="638" y="226" width="2.5" height="2.5"/>
+    <rect x="676" y="234" width="2.5" height="2.5"/>
+    <rect x="708" y="232" width="2.5" height="2.5"/>
+    <rect x="744" y="232" width="2.5" height="2.5"/>
+    <rect x="784" y="180" width="2.5" height="2.5"/>
+    <rect x="800" y="200" width="2.5" height="2.5"/>
+    <rect x="828" y="216" width="2.5" height="2.5"/>
+    <rect x="848" y="208" width="2.5" height="2.5"/>
+    <rect x="876" y="186" width="2.5" height="2.5"/>
+    <rect x="896" y="200" width="2.5" height="2.5"/>
+    <rect x="924" y="184" width="2.5" height="2.5"/>
+    <rect x="948" y="200" width="2.5" height="2.5"/>
+    <rect x="978" y="200" width="2.5" height="2.5"/>
+    <rect x="1010" y="186" width="2.5" height="2.5"/>
+    <rect x="1042" y="138" width="2.5" height="2.5"/>
+    <rect x="1058" y="158" width="2.5" height="2.5"/>
+    <rect x="1078" y="178" width="2.5" height="2.5"/>
+    <rect x="1100" y="208" width="2.5" height="2.5"/>
+    <rect x="1130" y="208" width="2.5" height="2.5"/>
+    <rect x="1170" y="216" width="2.5" height="2.5"/>
+    <rect x="1218" y="208" width="2.5" height="2.5"/>
+    <rect x="1248" y="200" width="2.5" height="2.5"/>
+  </g>
+
+  <!-- Cyan windows (most common) -->
+  <g fill="#7dcfff">
+    <rect x="6"   y="170" width="2.5" height="2.5"/>
+    <rect x="22"  y="186" width="2.5" height="2.5"/>
+    <rect x="40"  y="178" width="2.5" height="2.5"/>
+    <rect x="56"  y="200" width="2.5" height="2.5"/>
+    <rect x="72"  y="194" width="2.5" height="2.5"/>
+    <rect x="98"  y="148" width="2.5" height="2.5"/>
+    <rect x="112" y="160" width="2.5" height="2.5"/>
+    <rect x="128" y="148" width="2.5" height="2.5"/>
+    <rect x="148" y="156" width="2.5" height="2.5"/>
+    <rect x="164" y="180" width="2.5" height="2.5"/>
+    <rect x="190" y="190" width="2.5" height="2.5"/>
+    <rect x="206" y="220" width="2.5" height="2.5"/>
+    <rect x="240" y="220" width="2.5" height="2.5"/>
+    <rect x="262" y="240" width="2.5" height="2.5"/>
+    <rect x="282" y="200" width="2.5" height="2.5"/>
+    <rect x="304" y="216" width="2.5" height="2.5"/>
+    <rect x="328" y="200" width="2.5" height="2.5"/>
+    <rect x="358" y="160" width="2.5" height="2.5"/>
+    <rect x="364" y="178" width="2.5" height="2.5"/>
+    <rect x="370" y="194" width="2.5" height="2.5"/>
+    <rect x="384" y="210" width="2.5" height="2.5"/>
+    <rect x="430" y="170" width="2.5" height="2.5"/>
+    <rect x="446" y="200" width="2.5" height="2.5"/>
+    <rect x="466" y="222" width="2.5" height="2.5"/>
+    <rect x="492" y="220" width="2.5" height="2.5"/>
+    <rect x="514" y="234" width="2.5" height="2.5"/>
+    <rect x="540" y="200" width="2.5" height="2.5"/>
+    <rect x="562" y="240" width="2.5" height="2.5"/>
+    <rect x="580" y="220" width="2.5" height="2.5"/>
+    <rect x="598" y="246" width="2.5" height="2.5"/>
+    <rect x="624" y="240" width="2.5" height="2.5"/>
+    <rect x="666" y="240" width="2.5" height="2.5"/>
+    <rect x="700" y="148" width="2.5" height="2.5"/>
+    <rect x="704" y="170" width="2.5" height="2.5"/>
+    <rect x="710" y="190" width="2.5" height="2.5"/>
+    <rect x="714" y="216" width="2.5" height="2.5"/>
+    <rect x="740" y="240" width="2.5" height="2.5"/>
+    <rect x="780" y="170" width="2.5" height="2.5"/>
+    <rect x="794" y="186" width="2.5" height="2.5"/>
+    <rect x="810" y="200" width="2.5" height="2.5"/>
+    <rect x="824" y="220" width="2.5" height="2.5"/>
+    <rect x="858" y="170" width="2.5" height="2.5"/>
+    <rect x="862" y="186" width="2.5" height="2.5"/>
+    <rect x="868" y="206" width="2.5" height="2.5"/>
+    <rect x="872" y="226" width="2.5" height="2.5"/>
+    <rect x="888" y="180" width="2.5" height="2.5"/>
+    <rect x="908" y="166" width="2.5" height="2.5"/>
+    <rect x="930" y="180" width="2.5" height="2.5"/>
+    <rect x="954" y="194" width="2.5" height="2.5"/>
+    <rect x="978" y="172" width="2.5" height="2.5"/>
+    <rect x="982" y="190" width="2.5" height="2.5"/>
+    <rect x="988" y="210" width="2.5" height="2.5"/>
+    <rect x="1004" y="158" width="2.5" height="2.5"/>
+    <rect x="1014" y="176" width="2.5" height="2.5"/>
+    <rect x="1020" y="200" width="2.5" height="2.5"/>
+    <rect x="1042" y="120" width="2.5" height="2.5"/>
+    <rect x="1056" y="100" width="2.5" height="2.5"/>
+    <rect x="1066" y="120" width="2.5" height="2.5"/>
+    <rect x="1062" y="140" width="2.5" height="2.5"/>
+    <rect x="1078" y="160" width="2.5" height="2.5"/>
+    <rect x="1086" y="184" width="2.5" height="2.5"/>
+    <rect x="1066" y="200" width="2.5" height="2.5"/>
+    <rect x="1080" y="220" width="2.5" height="2.5"/>
+    <rect x="1108" y="200" width="2.5" height="2.5"/>
+    <rect x="1124" y="180" width="2.5" height="2.5"/>
+    <rect x="1144" y="200" width="2.5" height="2.5"/>
+    <rect x="1166" y="220" width="2.5" height="2.5"/>
+    <rect x="1190" y="184" width="2.5" height="2.5"/>
+    <rect x="1212" y="220" width="2.5" height="2.5"/>
+    <rect x="1234" y="200" width="2.5" height="2.5"/>
+    <rect x="1256" y="218" width="2.5" height="2.5"/>
+    <rect x="1268" y="200" width="2.5" height="2.5"/>
+  </g>
+
+  <!-- Magenta / hot pink windows (rare, punchy) -->
+  <g fill="#ff5d8f">
+    <rect x="50"  y="172" width="2.5" height="2.5"/>
+    <rect x="120" y="186" width="2.5" height="2.5"/>
+    <rect x="166" y="200" width="2.5" height="2.5"/>
+    <rect x="200" y="174" width="2.5" height="2.5"/>
+    <rect x="236" y="180" width="2.5" height="2.5"/>
+    <rect x="276" y="220" width="2.5" height="2.5"/>
+    <rect x="324" y="184" width="2.5" height="2.5"/>
+    <rect x="380" y="166" width="2.5" height="2.5"/>
+    <rect x="424" y="200" width="2.5" height="2.5"/>
+    <rect x="488" y="232" width="2.5" height="2.5"/>
+    <rect x="544" y="220" width="2.5" height="2.5"/>
+    <rect x="610" y="220" width="2.5" height="2.5"/>
+    <rect x="678" y="226" width="2.5" height="2.5"/>
+    <rect x="754" y="240" width="2.5" height="2.5"/>
+    <rect x="788" y="156" width="2.5" height="2.5"/>
+    <rect x="816" y="176" width="2.5" height="2.5"/>
+    <rect x="864" y="160" width="2.5" height="2.5"/>
+    <rect x="890" y="220" width="2.5" height="2.5"/>
+    <rect x="936" y="200" width="2.5" height="2.5"/>
+    <rect x="970" y="186" width="2.5" height="2.5"/>
+    <rect x="1018" y="220" width="2.5" height="2.5"/>
+    <rect x="1062" y="100" width="2.5" height="2.5"/>
+    <rect x="1078" y="100" width="2.5" height="2.5"/>
+    <rect x="1086" y="220" width="2.5" height="2.5"/>
+    <rect x="1116" y="220" width="2.5" height="2.5"/>
+    <rect x="1156" y="240" width="2.5" height="2.5"/>
+    <rect x="1196" y="220" width="2.5" height="2.5"/>
+    <rect x="1244" y="220" width="2.5" height="2.5"/>
+  </g>
+
+  <!-- SKY-BRIDGES — thin lines across deep gaps -->
+  <g stroke="#1a0830" stroke-width="0.8" fill="none" opacity="0.85">
+    <line x1="168" y1="160" x2="232" y2="156"/>
+    <line x1="284" y1="170" x2="320" y2="158"/>
+    <line x1="478" y1="186" x2="528" y2="180"/>
+    <line x1="832" y1="160" x2="886" y2="174"/>
+    <line x1="970" y1="178" x2="1004" y2="166"/>
+    <line x1="1094" y1="118" x2="1158" y2="172"/>
+  </g>
+
+  <!-- ATMOSPHERIC HAZE — soft cyan/magenta wash near street level -->
+  <rect width="1280" height="256" fill="url(#cp-haze)"/>
+
+  <!-- Scanlines -->
+  <rect width="1280" height="256" fill="url(#cp-scan)"/>
+
+  <!-- Grain on the cityscape -->
+  <rect width="1280" height="256" fill="url(#cp-grain)"/>
+
+  <!-- ============================================================ -->
+  <!-- TITLE :: chunky pixel-block "ART" with tile-border outlines    -->
+  <!-- ============================================================ -->
+
+  <!-- Global darken pass: dims the whole cityscape so the title pops
+       without needing its own shadow. -->
+  <rect width="1280" height="256" fill="rgba(0,0,0,0.6)"/>
+
+  <!-- Title: gradient-filled tiles with per-tile dark stroke -->
+  <use href="#cp-titleCells" fill="url(#cp-title)" stroke="#0a0014"
+       stroke-width="1.5" stroke-linejoin="miter" shape-rendering="crispEdges"/>
+
+  <!-- BYLINE :: clean mono "by @zrosenbauer" -->
+  <text x="640" y="206" text-anchor="middle"
+        font-family="'Geist Mono', 'SF Mono', 'Fira Code', monospace"
+        font-size="14" font-weight="600" letter-spacing="5" fill="#f4f0ff">
+    <tspan fill="#a89cff">by </tspan><tspan fill="#ec4899">@zrosenbauer</tspan>
+  </text>
+
+  <!-- Vignette on top of everything -->
+  <rect width="1280" height="256" fill="url(#cp-vig)"/>
+</svg>

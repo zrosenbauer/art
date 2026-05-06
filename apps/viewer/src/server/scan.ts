@@ -104,12 +104,13 @@ async function readArtYaml(dir: string): Promise<ArtMeta> {
 }
 
 /**
- * An asset directory either has an art.yaml or contains a file named
- * `<dirname>.<ext>` for one of the recognized asset extensions.
+ * An asset directory contains at least one file named `<dirname>.<ext>`
+ * for a recognized asset extension. `art.yaml` alone doesn't qualify:
+ * category dirs (e.g. `art/banners/`) carry their own `art.yaml` for
+ * category metadata, and the walker needs to descend into them to find
+ * the assets nested inside.
  */
 async function isAssetDir(dir: string, name: string): Promise<boolean> {
-  if (await isFile(join(dir, 'art.yaml'))) return true
-  if (await isFile(join(dir, 'art.yml'))) return true
   for (const ext of ASSET_EXTS) {
     if (await isFile(join(dir, `${name}${ext}`))) return true
   }

@@ -1,11 +1,15 @@
 # `@art/svg-to-png`
 
-> Browser-based SVG → PNG converter, used by the
-> [`@zrosenbauer/art`](../..) viewer and exposed as a CLI bin.
+<p align="center">
+  <a href="../../README.md"><img src="https://img.shields.io/badge/catalog-browse-ec4899?style=flat-square" alt="Browse catalog" /></a>
+  <a href="../../LICENSE"><img src="https://img.shields.io/badge/license-MIT-c026d3?style=flat-square" alt="MIT" /></a>
+  <img src="https://img.shields.io/badge/Playwright-f97316?style=flat-square" alt="Playwright" />
+  <img src="https://img.shields.io/badge/2x_retina-7dcfff?style=flat-square" alt="2× retina" />
+</p>
 
-Renders SVG files via headless Chromium (Playwright) at a configurable
-retina scale, writes the PNG as a sibling of the source SVG, and enforces
-the project's edge-to-edge viewBox rule.
+> Browser-based SVG → PNG converter — used by the [`@zrosenbauer/art`](../..) viewer and exposed as a CLI bin.
+
+Renders SVG files via headless Chromium (Playwright) at a configurable retina scale, writes the PNG as a sibling of the source SVG, and enforces the project's edge-to-edge viewBox rule.
 
 ## Why a browser, not librsvg?
 

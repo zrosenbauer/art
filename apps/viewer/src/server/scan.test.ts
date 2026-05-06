@@ -148,6 +148,22 @@ describe('scanScope', () => {
     const tree = await scanScope('all')
     expect(flatTreeNames(tree)).toEqual([])
   })
+
+  it('still finds nested assets when a category dir carries its own art.yaml', async () => {
+    // Category-level metadata (build-docs reads title/description/order from here).
+    await mkdir(join(TMP_ART, 'banners'), { recursive: true })
+    await writeFile(
+      join(TMP_ART, 'banners', 'art.yaml'),
+      'title: Repository Banners\norder: 1\n',
+    )
+    // Asset nested inside the category.
+    await makeAsset('banners', 'banner_test', { png: true })
+
+    const tree = await scanScope('all')
+    expect(flatTreeNames(tree)).toEqual(['banner_test'])
+    const asset = tree.children.get('banners')!.items[0]
+    expect(asset.formats.png).toBe('banners/banner_test/banner_test.png')
+  })
 })
 
 describe('scanArchive', () => {
