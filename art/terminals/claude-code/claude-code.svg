@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 420" width="660" height="420">
+  <defs>
+    <clipPath id="claude-code-clip">
+      <rect x="0" y="0" width="660" height="420" rx="10"/>
+    </clipPath>
+  </defs>
+
+  <!-- Window -->
+  <rect x="0.75" y="0.75" width="658.5" height="418.5" rx="10" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1.5"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="660" height="36" rx="10" fill="#2a2a2a"/>
+  <rect x="0" y="26" width="660" height="10" fill="#2a2a2a"/>
+
+  <!-- Traffic lights -->
+  <circle cx="28" cy="18" r="7" fill="#ef4444"/>
+  <circle cx="50" cy="18" r="7" fill="#f59e0b"/>
+  <circle cx="72" cy="18" r="7" fill="#10b981"/>
+
+  <g clip-path="url(#claude-code-clip)">
+    <!-- Title -->
+    <text x="330" y="22" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11" fill="#6b7280">claude — zsh — 100×30</text>
+
+    <!-- Terminal area -->
+    <rect x="0" y="36" width="660" height="384" fill="#0a0a0a"/>
+
+    <!-- Welcome banner box -->
+    <rect x="20" y="54" width="620" height="86" rx="6" fill="none" stroke="#d97757" stroke-width="1"/>
+    <text x="38" y="78" font-family="'Geist Mono', monospace" font-size="14" fill="#d97757">✻</text>
+    <text x="58" y="78" font-family="'Geist Mono', monospace" font-size="12" font-weight="500" fill="#e5e5e5">Welcome to Claude Code!</text>
+    <text x="58" y="106" font-family="'Geist Mono', monospace" font-size="11" fill="#737373">/help for help, /status for your current setup</text>
+    <text x="58" y="126" font-family="'Geist Mono', monospace" font-size="11" fill="#737373">cwd: /Users/dev/my-app</text>
+
+    <!-- User prompt -->
+    <text x="20" y="166" font-family="'Geist Mono', monospace" font-size="11" font-weight="500" fill="#737373">&gt;</text>
+    <text x="38" y="166" font-family="'Geist Mono', monospace" font-size="11" fill="#e5e5e5">add a Button component with primary and secondary variants</text>
+
+    <!-- Tool call 1 -->
+    <text x="20" y="198" font-family="'Geist Mono', monospace" font-size="13" fill="#d97757">●</text>
+    <text x="38" y="198" font-family="'Geist Mono', monospace" font-size="11" fill="#e5e5e5">Read<tspan fill="#737373">(</tspan>src/components/Card.tsx<tspan fill="#737373">)</tspan></text>
+    <text x="42" y="216" font-family="'Geist Mono', monospace" font-size="11" fill="#525252">⎿</text>
+    <text x="64" y="216" font-family="'Geist Mono', monospace" font-size="11" fill="#737373">Read 42 lines</text>
+
+    <!-- Tool call 2 -->
+    <text x="20" y="244" font-family="'Geist Mono', monospace" font-size="13" fill="#d97757">●</text>
+    <text x="38" y="244" font-family="'Geist Mono', monospace" font-size="11" fill="#e5e5e5">Write<tspan fill="#737373">(</tspan>src/components/Button.tsx<tspan fill="#737373">)</tspan></text>
+    <text x="42" y="262" font-family="'Geist Mono', monospace" font-size="11" fill="#525252">⎿</text>
+    <text x="64" y="262" font-family="'Geist Mono', monospace" font-size="11" fill="#737373">Wrote 38 lines · <tspan fill="#10b981">+38</tspan> <tspan fill="#525252">/</tspan> <tspan fill="#ef4444">-0</tspan></text>
+
+    <!-- Response text -->
+    <text x="20" y="292" font-family="'Geist Mono', monospace" font-size="11" fill="#e5e5e5">Added a Button with primary and secondary variants —</text>
+    <text x="20" y="308" font-family="'Geist Mono', monospace" font-size="11" fill="#e5e5e5">styled via <tspan fill="#7268F0">var(--color-primary)</tspan> from the theme.</text>
+
+    <!-- Input prompt box -->
+    <rect x="20" y="338" width="620" height="40" rx="6" fill="none" stroke="#d97757" stroke-width="1"/>
+    <text x="38" y="362" font-family="'Geist Mono', monospace" font-size="12" font-weight="500" fill="#d97757">&gt;</text>
+    <!-- Cursor -->
+    <rect x="54" y="352" width="7" height="14" fill="#e5e5e5" opacity="0.7"/>
+
+    <!-- Status line -->
+    <text x="20" y="398" font-family="'Geist Mono', monospace" font-size="10" fill="#525252">? for shortcuts</text>
+    <text x="640" y="398" text-anchor="end" font-family="'Geist Mono', monospace" font-size="10" fill="#525252">Sonnet 4.6 · 14% context left</text>
+  </g>
+</svg>

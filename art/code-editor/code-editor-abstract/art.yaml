@@ -1,0 +1,8 @@
+title: Code Editor (abstract)
+description: Stylized IDE window — sidebar file list and code lines rendered as colored bars instead of literal source. Generic stand-in for "an editor" that won't anchor on a specific language.
+alt: Stylized code editor window with abstract code
+tags:
+  - editor
+  - ide
+  - mockup
+  - abstract

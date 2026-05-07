@@ -1,0 +1,9 @@
+title: Code Editor
+description: IDE window with sidebar tree, tab bar, line-number gutter, and a 20-line TypeScript React Button component as the body. Generic enough to drop into any frontend repo's README.
+alt: Code editor window showing a TypeScript React Button component
+tags:
+  - editor
+  - ide
+  - mockup
+  - typescript
+  - react

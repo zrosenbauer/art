@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 420" width="660" height="420">
+  <defs>
+    <clipPath id="code-editor-abstract-clip">
+      <rect x="0" y="0" width="660" height="420" rx="10"/>
+    </clipPath>
+  </defs>
+
+  <!-- IDE Window (outer shell, slightly inset to avoid stroke clipping) -->
+  <rect x="0.75" y="0.75" width="658.5" height="418.5" rx="10" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1.5"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="660" height="36" rx="10" fill="#2a2a2a"/>
+  <rect x="0" y="26" width="660" height="10" fill="#2a2a2a"/>
+
+  <!-- Traffic lights -->
+  <circle cx="28" cy="18" r="7" fill="#ef4444"/>
+  <circle cx="50" cy="18" r="7" fill="#f59e0b"/>
+  <circle cx="72" cy="18" r="7" fill="#10b981"/>
+
+  <!-- Inner content clipped to rounded shell -->
+  <g clip-path="url(#code-editor-abstract-clip)">
+    <!-- Sidebar -->
+    <rect x="0" y="36" width="80" height="384" fill="#111111"/>
+    <!-- Sidebar file icons -->
+    <rect x="16" y="52" width="28" height="3" rx="1" fill="#505050" opacity="0.4"/>
+    <rect x="16" y="62" width="22" height="3" rx="1" fill="#505050" opacity="0.3"/>
+    <rect x="16" y="72" width="26" height="3" rx="1" fill="#7268F0" opacity="0.5"/>
+    <rect x="16" y="82" width="20" height="3" rx="1" fill="#505050" opacity="0.3"/>
+    <rect x="16" y="92" width="24" height="3" rx="1" fill="#505050" opacity="0.25"/>
+    <rect x="16" y="102" width="18" height="3" rx="1" fill="#505050" opacity="0.2"/>
+    <rect x="16" y="112" width="28" height="3" rx="1" fill="#505050" opacity="0.25"/>
+    <rect x="16" y="122" width="22" height="3" rx="1" fill="#505050" opacity="0.2"/>
+
+    <!-- Editor area -->
+    <rect x="80" y="36" width="580" height="384" fill="#0a0a0a"/>
+  </g>
+</svg>

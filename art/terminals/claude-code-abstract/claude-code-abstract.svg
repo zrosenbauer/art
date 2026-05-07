@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 420" width="660" height="420">
+  <defs>
+    <clipPath id="claude-code-abstract-clip">
+      <rect x="0" y="0" width="660" height="420" rx="10"/>
+    </clipPath>
+  </defs>
+
+  <!-- Window -->
+  <rect x="0.75" y="0.75" width="658.5" height="418.5" rx="10" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1.5"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="660" height="36" rx="10" fill="#2a2a2a"/>
+  <rect x="0" y="26" width="660" height="10" fill="#2a2a2a"/>
+
+  <!-- Traffic lights -->
+  <circle cx="28" cy="18" r="7" fill="#ef4444"/>
+  <circle cx="50" cy="18" r="7" fill="#f59e0b"/>
+  <circle cx="72" cy="18" r="7" fill="#10b981"/>
+
+  <g clip-path="url(#claude-code-abstract-clip)">
+    <!-- Title bar text bar (abstract) -->
+    <rect x="310" y="16" width="40" height="5" rx="2" fill="#505050" opacity="0.5"/>
+
+    <!-- Terminal area -->
+    <rect x="0" y="36" width="660" height="384" fill="#0a0a0a"/>
+
+    <!-- Welcome banner box -->
+    <rect x="20" y="54" width="620" height="86" rx="6" fill="none" stroke="#d97757" stroke-width="1.2"/>
+
+    <!-- ✻ asterisk indicator (icon, real) -->
+    <g transform="translate(43, 74)" stroke="#d97757" stroke-width="1.5" stroke-linecap="round">
+      <line x1="-6" y1="0" x2="6" y2="0"/>
+      <line x1="0" y1="-6" x2="0" y2="6"/>
+      <line x1="-4.5" y1="-4.5" x2="4.5" y2="4.5"/>
+      <line x1="-4.5" y1="4.5" x2="4.5" y2="-4.5"/>
+    </g>
+
+    <!-- Welcome text (real, signals Claude Code) -->
+    <text x="58" y="78" font-family="'Geist Mono', monospace" font-size="12" font-weight="500" fill="#e5e5e5">Welcome to Claude Code!</text>
+
+    <!-- /help info bars (abstract) — y matches non-abstract row 2 -->
+    <rect x="58" y="103" width="40" height="5" rx="2" fill="#9ca3af" opacity="0.5"/>
+    <rect x="104" y="103" width="22" height="5" rx="2" fill="#9ca3af" opacity="0.4"/>
+    <rect x="132" y="103" width="48" height="5" rx="2" fill="#9ca3af" opacity="0.5"/>
+    <rect x="186" y="103" width="20" height="5" rx="2" fill="#9ca3af" opacity="0.4"/>
+    <rect x="212" y="103" width="60" height="5" rx="2" fill="#9ca3af" opacity="0.45"/>
+
+    <!-- cwd bars (abstract path) — y matches non-abstract row 3 -->
+    <rect x="58" y="123" width="22" height="5" rx="2" fill="#9ca3af" opacity="0.45"/>
+    <rect x="86" y="123" width="180" height="5" rx="2" fill="#9ca3af" opacity="0.4"/>
+
+    <!-- > User prompt (real symbol + abstract content) -->
+    <text x="20" y="170" font-family="'Geist Mono', monospace" font-size="13" font-weight="600" fill="#737373">&gt;</text>
+    <rect x="38" y="164" width="36" height="6" rx="2" fill="#e5e5e5" opacity="0.85"/>
+    <rect x="80" y="164" width="22" height="6" rx="2" fill="#e5e5e5" opacity="0.85"/>
+    <rect x="108" y="164" width="64" height="6" rx="2" fill="#e5e5e5" opacity="0.85"/>
+    <rect x="178" y="164" width="36" height="6" rx="2" fill="#e5e5e5" opacity="0.85"/>
+    <rect x="220" y="164" width="20" height="6" rx="2" fill="#e5e5e5" opacity="0.85"/>
+    <rect x="246" y="164" width="40" height="6" rx="2" fill="#e5e5e5" opacity="0.85"/>
+    <rect x="292" y="164" width="48" height="6" rx="2" fill="#e5e5e5" opacity="0.85"/>
+
+    <!-- ● Tool call 1 (real bullet + abstract content) -->
+    <circle cx="24" cy="197" r="3.5" fill="#d97757"/>
+    <rect x="38" y="194" width="32" height="6" rx="2" fill="#e5e5e5" opacity="0.9"/>
+    <rect x="70" y="194" width="2" height="6" rx="1" fill="#9ca3af" opacity="0.5"/>
+    <rect x="74" y="194" width="180" height="6" rx="2" fill="#9ca3af" opacity="0.55"/>
+    <rect x="256" y="194" width="2" height="6" rx="1" fill="#9ca3af" opacity="0.5"/>
+    <!-- ⎿ result indicator (real corner) -->
+    <path d="M 42 210 L 42 216 L 50 216" stroke="#525252" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <rect x="60" y="213" width="28" height="5" rx="2" fill="#9ca3af" opacity="0.4"/>
+    <rect x="92" y="213" width="14" height="5" rx="2" fill="#9ca3af" opacity="0.4"/>
+    <rect x="110" y="213" width="30" height="5" rx="2" fill="#9ca3af" opacity="0.4"/>
+
+    <!-- ● Tool call 2 -->
+    <circle cx="24" cy="243" r="3.5" fill="#d97757"/>
+    <rect x="38" y="240" width="36" height="6" rx="2" fill="#e5e5e5" opacity="0.9"/>
+    <rect x="74" y="240" width="2" height="6" rx="1" fill="#9ca3af" opacity="0.5"/>
+    <rect x="78" y="240" width="170" height="6" rx="2" fill="#9ca3af" opacity="0.55"/>
+    <rect x="250" y="240" width="2" height="6" rx="1" fill="#9ca3af" opacity="0.5"/>
+    <!-- ⎿ result indicator -->
+    <path d="M 42 256 L 42 262 L 50 262" stroke="#525252" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <rect x="60" y="259" width="32" height="5" rx="2" fill="#9ca3af" opacity="0.4"/>
+    <rect x="96" y="259" width="14" height="5" rx="2" fill="#9ca3af" opacity="0.4"/>
+    <rect x="114" y="259" width="30" height="5" rx="2" fill="#9ca3af" opacity="0.4"/>
+    <rect x="150" y="259" width="20" height="5" rx="2" fill="#10b981" opacity="0.7"/>
+
+    <!-- Response text bars -->
+    <rect x="20" y="288" width="20" height="5" rx="2" fill="#e5e5e5" opacity="0.8"/>
+    <rect x="46" y="288" width="44" height="5" rx="2" fill="#e5e5e5" opacity="0.8"/>
+    <rect x="96" y="288" width="22" height="5" rx="2" fill="#e5e5e5" opacity="0.8"/>
+    <rect x="124" y="288" width="60" height="5" rx="2" fill="#e5e5e5" opacity="0.8"/>
+    <rect x="190" y="288" width="40" height="5" rx="2" fill="#e5e5e5" opacity="0.8"/>
+    <rect x="236" y="288" width="36" height="5" rx="2" fill="#e5e5e5" opacity="0.8"/>
+    <rect x="278" y="288" width="56" height="5" rx="2" fill="#e5e5e5" opacity="0.8"/>
+    <rect x="340" y="288" width="44" height="5" rx="2" fill="#e5e5e5" opacity="0.8"/>
+
+    <rect x="20" y="306" width="56" height="5" rx="2" fill="#e5e5e5" opacity="0.8"/>
+    <rect x="82" y="306" width="32" height="5" rx="2" fill="#e5e5e5" opacity="0.8"/>
+    <rect x="120" y="306" width="22" height="5" rx="2" fill="#e5e5e5" opacity="0.8"/>
+    <rect x="148" y="306" width="120" height="5" rx="2" fill="#7268F0" opacity="0.7"/>
+
+    <!-- Input prompt box -->
+    <rect x="20" y="338" width="620" height="40" rx="6" fill="none" stroke="#d97757" stroke-width="1.2"/>
+    <!-- > prompt symbol (real, signature Claude Code) -->
+    <text x="38" y="364" font-family="'Geist Mono', monospace" font-size="14" font-weight="600" fill="#d97757">&gt;</text>
+    <!-- cursor block -->
+    <rect x="58" y="354" width="7" height="10" fill="#e5e5e5" opacity="0.7"/>
+
+    <!-- Status line bars (abstract) -->
+    <rect x="20" y="396" width="6" height="4" rx="1" fill="#525252"/>
+    <rect x="30" y="396" width="22" height="4" rx="1" fill="#525252"/>
+    <rect x="56" y="396" width="42" height="4" rx="1" fill="#525252"/>
+
+    <rect x="530" y="396" width="44" height="4" rx="1" fill="#525252"/>
+    <rect x="578" y="396" width="20" height="4" rx="1" fill="#525252"/>
+    <rect x="602" y="396" width="38" height="4" rx="1" fill="#525252"/>
+  </g>
+</svg>

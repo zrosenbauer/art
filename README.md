@@ -284,6 +284,146 @@ Skillicon for WezTerm — terminal mark on an indigo squircle.
 
 📁 Sources: [svg](./art/skillicons/wezterm/wezterm.svg) · [png](./art/skillicons/wezterm/wezterm.png)
 
+## Terminals
+
+Mock terminal windows — Claude Code sessions, CLI screenshots. 660×420 with rounded macOS chrome.
+
+### Claude Code
+
+<sup>660×420 · `terminal` · `claude-code` · `mockup`</sup>
+
+<p align="center"><img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/terminals/claude-code/claude-code.png" alt="Claude Code terminal session showing a tool-call exchange" /></p>
+
+Claude Code terminal session — welcome banner, user prompt, two tool calls (Read/Write), assistant response, input box, and status line. Generic Button-component example as the body.
+
+**Markdown**
+
+```markdown
+![Claude Code terminal session showing a tool-call exchange](https://raw.githubusercontent.com/zrosenbauer/art/main/art/terminals/claude-code/claude-code.png)
+```
+
+**HTML**
+
+```html
+<img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/terminals/claude-code/claude-code.png" alt="Claude Code terminal session showing a tool-call exchange" />
+```
+
+📁 Sources: [svg](./art/terminals/claude-code/claude-code.svg) · [png](./art/terminals/claude-code/claude-code.png)
+
+### Claude Code (abstract)
+
+<sup>660×420 · `terminal` · `claude-code` · `mockup` · `abstract`</sup>
+
+<p align="center"><img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/terminals/claude-code-abstract/claude-code-abstract.png" alt="Stylized Claude Code terminal session" /></p>
+
+Stylized Claude Code terminal — content rendered as colored bars instead of literal text. Use as a generic "agentic CLI session" illustration that won't read as a specific transcript.
+
+**Markdown**
+
+```markdown
+![Stylized Claude Code terminal session](https://raw.githubusercontent.com/zrosenbauer/art/main/art/terminals/claude-code-abstract/claude-code-abstract.png)
+```
+
+**HTML**
+
+```html
+<img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/terminals/claude-code-abstract/claude-code-abstract.png" alt="Stylized Claude Code terminal session" />
+```
+
+📁 Sources: [svg](./art/terminals/claude-code-abstract/claude-code-abstract.svg) · [png](./art/terminals/claude-code-abstract/claude-code-abstract.png)
+
+## Code Editors
+
+Mock IDE windows — sidebar tree, tabs, syntax-highlighted editor. 660×420 with rounded macOS chrome. Use for "look how this works" screenshots in READMEs.
+
+### Code Editor
+
+<sup>660×420 · `editor` · `ide` · `mockup` · `typescript` · `react`</sup>
+
+<p align="center"><img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/code-editor/code-editor/code-editor.png" alt="Code editor window showing a TypeScript React Button component" /></p>
+
+IDE window with sidebar tree, tab bar, line-number gutter, and a 20-line TypeScript React Button component as the body. Generic enough to drop into any frontend repo's README.
+
+**Markdown**
+
+```markdown
+![Code editor window showing a TypeScript React Button component](https://raw.githubusercontent.com/zrosenbauer/art/main/art/code-editor/code-editor/code-editor.png)
+```
+
+**HTML**
+
+```html
+<img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/code-editor/code-editor/code-editor.png" alt="Code editor window showing a TypeScript React Button component" />
+```
+
+📁 Sources: [svg](./art/code-editor/code-editor/code-editor.svg) · [png](./art/code-editor/code-editor/code-editor.png)
+
+### Code Editor (abstract)
+
+<sup>660×420 · `editor` · `ide` · `mockup` · `abstract`</sup>
+
+<p align="center"><img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/code-editor/code-editor-abstract/code-editor-abstract.png" alt="Stylized code editor window with abstract code" /></p>
+
+Stylized IDE window — sidebar file list and code lines rendered as colored bars instead of literal source. Generic stand-in for "an editor" that won't anchor on a specific language.
+
+**Markdown**
+
+```markdown
+![Stylized code editor window with abstract code](https://raw.githubusercontent.com/zrosenbauer/art/main/art/code-editor/code-editor-abstract/code-editor-abstract.png)
+```
+
+**HTML**
+
+```html
+<img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/code-editor/code-editor-abstract/code-editor-abstract.png" alt="Stylized code editor window with abstract code" />
+```
+
+📁 Sources: [svg](./art/code-editor/code-editor-abstract/code-editor-abstract.svg) · [png](./art/code-editor/code-editor-abstract/code-editor-abstract.png)
+
+### Code Editor (abstract, empty)
+
+<sup>660×420 · `editor` · `ide` · `mockup` · `abstract` · `empty`</sup>
+
+<p align="center"><img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/code-editor/code-editor-abstract-empty/code-editor-abstract-empty.png" alt="Empty stylized code editor window" /></p>
+
+Stylized IDE shell — sidebar bars and an empty editor pane. Use as a blank canvas to overlay your own diagrams or annotations.
+
+**Markdown**
+
+```markdown
+![Empty stylized code editor window](https://raw.githubusercontent.com/zrosenbauer/art/main/art/code-editor/code-editor-abstract-empty/code-editor-abstract-empty.png)
+```
+
+**HTML**
+
+```html
+<img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/code-editor/code-editor-abstract-empty/code-editor-abstract-empty.png" alt="Empty stylized code editor window" />
+```
+
+📁 Sources: [svg](./art/code-editor/code-editor-abstract-empty/code-editor-abstract-empty.svg) · [png](./art/code-editor/code-editor-abstract-empty/code-editor-abstract-empty.png)
+
+### Code Editor (empty)
+
+<sup>660×420 · `editor` · `ide` · `mockup` · `empty`</sup>
+
+<p align="center"><img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/code-editor/code-editor-empty/code-editor-empty.png" alt="Empty code editor window" /></p>
+
+IDE window with sidebar tree, tab bar, and an empty editor pane. Use as a canvas for overlaying screenshots, diagrams, or annotations.
+
+**Markdown**
+
+```markdown
+![Empty code editor window](https://raw.githubusercontent.com/zrosenbauer/art/main/art/code-editor/code-editor-empty/code-editor-empty.png)
+```
+
+**HTML**
+
+```html
+<img src="https://raw.githubusercontent.com/zrosenbauer/art/main/art/code-editor/code-editor-empty/code-editor-empty.png" alt="Empty code editor window" />
+```
+
+📁 Sources: [svg](./art/code-editor/code-editor-empty/code-editor-empty.svg) · [png](./art/code-editor/code-editor-empty/code-editor-empty.png)
+
 <!-- END CATALOG -->
 
 ## License

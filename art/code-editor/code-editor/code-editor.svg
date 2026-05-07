@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 420" width="660" height="420">
+  <defs>
+    <clipPath id="code-editor-clip">
+      <rect x="0" y="0" width="660" height="420" rx="10"/>
+    </clipPath>
+  </defs>
+
+  <!-- IDE Window (outer shell, slightly inset to avoid stroke clipping) -->
+  <rect x="0.75" y="0.75" width="658.5" height="418.5" rx="10" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1.5"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="660" height="36" rx="10" fill="#2a2a2a"/>
+  <rect x="0" y="26" width="660" height="10" fill="#2a2a2a"/>
+
+  <!-- Traffic lights -->
+  <circle cx="28" cy="18" r="7" fill="#ef4444"/>
+  <circle cx="50" cy="18" r="7" fill="#f59e0b"/>
+  <circle cx="72" cy="18" r="7" fill="#10b981"/>
+
+  <!-- File tab in title bar -->
+  <text x="330" y="22" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="11" fill="#737373">Button.tsx — my-app</text>
+
+  <!-- Inner content clipped to rounded shell -->
+  <g clip-path="url(#code-editor-clip)">
+    <!-- Sidebar -->
+    <rect x="0" y="36" width="120" height="384" fill="#111111"/>
+
+    <!-- Sidebar tree -->
+    <g font-family="'Geist Mono', monospace" font-size="10" xml:space="preserve">
+      <text x="16" y="60" fill="#737373">▾ src</text>
+      <text x="26" y="78" fill="#737373">▾ components</text>
+      <text x="36" y="96" fill="#737373">▸ ui</text>
+      <text x="36" y="114" fill="#737373">▾ forms</text>
+      <text x="52" y="132" fill="#525252">Card.tsx</text>
+      <!-- active file row -->
+      <rect x="0" y="140" width="120" height="18" fill="#7268F0" opacity="0.18"/>
+      <rect x="0" y="140" width="2" height="18" fill="#7268F0"/>
+      <text x="52" y="154" fill="#e5e5e5">Button.tsx</text>
+      <text x="52" y="172" fill="#525252">Input.tsx</text>
+      <text x="52" y="190" fill="#525252">Select.tsx</text>
+      <text x="36" y="208" fill="#737373">▸ layout</text>
+      <text x="26" y="226" fill="#737373">  package.json</text>
+      <text x="16" y="244" fill="#737373">▾ hooks</text>
+      <text x="26" y="262" fill="#737373">▸ src</text>
+      <text x="26" y="280" fill="#737373">  package.json</text>
+      <text x="16" y="298" fill="#737373">▾ tests</text>
+      <text x="26" y="316" fill="#737373">▸ unit</text>
+      <text x="26" y="334" fill="#737373">▸ integration</text>
+    </g>
+
+    <!-- Editor area -->
+    <rect x="120" y="36" width="540" height="384" fill="#0a0a0a"/>
+
+    <!-- Tab bar -->
+    <rect x="120" y="36" width="540" height="26" fill="#0e0e0e"/>
+    <rect x="120" y="36" width="110" height="26" fill="#0a0a0a"/>
+    <rect x="120" y="36" width="110" height="2" fill="#7268F0"/>
+    <text x="136" y="53" font-family="'Geist Mono', monospace" font-size="10" fill="#e5e5e5">Button.tsx</text>
+    <text x="218" y="53" font-family="'Geist Mono', monospace" font-size="10" fill="#737373">×</text>
+
+    <!-- Line numbers gutter -->
+    <rect x="120" y="62" width="34" height="358" fill="#0e0e0e"/>
+    <g fill="#3f3f3f" font-family="'Geist Mono', monospace" font-size="10">
+      <text x="146" y="80" text-anchor="end">1</text>
+      <text x="146" y="96" text-anchor="end">2</text>
+      <text x="146" y="112" text-anchor="end">3</text>
+      <text x="146" y="128" text-anchor="end">4</text>
+      <text x="146" y="144" text-anchor="end">5</text>
+      <text x="146" y="160" text-anchor="end">6</text>
+      <text x="146" y="176" text-anchor="end">7</text>
+      <text x="146" y="192" text-anchor="end">8</text>
+      <text x="146" y="208" text-anchor="end">9</text>
+      <text x="146" y="224" text-anchor="end">10</text>
+      <text x="146" y="240" text-anchor="end">11</text>
+      <text x="146" y="256" text-anchor="end">12</text>
+      <text x="146" y="272" text-anchor="end">13</text>
+      <text x="146" y="288" text-anchor="end">14</text>
+      <text x="146" y="304" text-anchor="end">15</text>
+      <text x="146" y="320" text-anchor="end">16</text>
+      <text x="146" y="336" text-anchor="end">17</text>
+      <text x="146" y="352" text-anchor="end">18</text>
+      <text x="146" y="368" text-anchor="end">19</text>
+      <text x="146" y="384" text-anchor="end">20</text>
+    </g>
+
+    <!-- Code (TypeScript React component) -->
+    <g font-family="'Geist Mono', monospace" font-size="10.5" xml:space="preserve">
+      <!-- Line 1: import { useState } from 'react' -->
+      <text x="162" y="80"><tspan fill="#c084fc">import</tspan><tspan fill="#e5e5e5"> { </tspan><tspan fill="#0097A7">useState</tspan><tspan fill="#e5e5e5"> } </tspan><tspan fill="#c084fc">from</tspan><tspan fill="#e5e5e5"> </tspan><tspan fill="#a3e635">'react'</tspan></text>
+
+      <!-- Line 2: import { cn } from './utils' -->
+      <text x="162" y="96"><tspan fill="#c084fc">import</tspan><tspan fill="#e5e5e5"> { </tspan><tspan fill="#0097A7">cn</tspan><tspan fill="#e5e5e5"> } </tspan><tspan fill="#c084fc">from</tspan><tspan fill="#e5e5e5"> </tspan><tspan fill="#a3e635">'./utils'</tspan></text>
+
+      <!-- Line 3: blank -->
+
+      <!-- Line 4: interface Props { -->
+      <text x="162" y="128"><tspan fill="#c084fc">interface</tspan><tspan fill="#22d3ee"> Props</tspan><tspan fill="#9ca3af"> {</tspan></text>
+
+      <!-- Line 5:   label: string -->
+      <text x="176" y="144"><tspan fill="#60a5fa">label</tspan><tspan fill="#9ca3af">: </tspan><tspan fill="#22d3ee">string</tspan></text>
+
+      <!-- Line 6:   variant?: 'primary' | 'secondary' -->
+      <text x="176" y="160"><tspan fill="#60a5fa">variant</tspan><tspan fill="#9ca3af">?: </tspan><tspan fill="#a3e635">'primary'</tspan><tspan fill="#9ca3af"> | </tspan><tspan fill="#a3e635">'secondary'</tspan></text>
+
+      <!-- Line 7: } -->
+      <text x="162" y="176"><tspan fill="#9ca3af">}</tspan></text>
+
+      <!-- Line 8: blank -->
+
+      <!-- Line 9: export function Button(props: Props) { -->
+      <text x="162" y="208"><tspan fill="#c084fc">export</tspan><tspan fill="#e5e5e5"> </tspan><tspan fill="#c084fc">function</tspan><tspan fill="#e5e5e5"> </tspan><tspan fill="#0097A7">Button</tspan><tspan fill="#9ca3af">(</tspan><tspan fill="#60a5fa">props</tspan><tspan fill="#9ca3af">: </tspan><tspan fill="#22d3ee">Props</tspan><tspan fill="#9ca3af">) {</tspan></text>
+
+      <!-- Line 10:   const [hovered, setHovered] = useState(false) -->
+      <text x="176" y="224"><tspan fill="#c084fc">const</tspan><tspan fill="#9ca3af"> [</tspan><tspan fill="#60a5fa">hovered</tspan><tspan fill="#9ca3af">, </tspan><tspan fill="#60a5fa">setHovered</tspan><tspan fill="#9ca3af">] = </tspan><tspan fill="#0097A7">useState</tspan><tspan fill="#9ca3af">(</tspan><tspan fill="#c084fc">false</tspan><tspan fill="#9ca3af">)</tspan></text>
+
+      <!-- Line 11:   const classes = cn('btn', props.variant) -->
+      <text x="176" y="240"><tspan fill="#c084fc">const</tspan><tspan fill="#e5e5e5"> </tspan><tspan fill="#60a5fa">classes</tspan><tspan fill="#9ca3af"> = </tspan><tspan fill="#0097A7">cn</tspan><tspan fill="#9ca3af">(</tspan><tspan fill="#a3e635">'btn'</tspan><tspan fill="#9ca3af">, </tspan><tspan fill="#60a5fa">props</tspan><tspan fill="#9ca3af">.</tspan><tspan fill="#60a5fa">variant</tspan><tspan fill="#9ca3af">)</tspan></text>
+
+      <!-- Line 12: blank -->
+
+      <!-- Line 13:   return ( -->
+      <text x="176" y="272"><tspan fill="#c084fc">return</tspan><tspan fill="#9ca3af"> (</tspan></text>
+
+      <!-- Line 14:     <button -->
+      <text x="190" y="288"><tspan fill="#9ca3af">&lt;</tspan><tspan fill="#ef4444">button</tspan></text>
+
+      <!-- Line 15:       className={classes} -->
+      <text x="204" y="304"><tspan fill="#EEFF41">className</tspan><tspan fill="#9ca3af">={</tspan><tspan fill="#60a5fa">classes</tspan><tspan fill="#9ca3af">}</tspan></text>
+
+      <!-- Line 16:       onMouseEnter={() => setHovered(true)} -->
+      <text x="204" y="320"><tspan fill="#EEFF41">onMouseEnter</tspan><tspan fill="#9ca3af">={() =&gt; </tspan><tspan fill="#0097A7">setHovered</tspan><tspan fill="#9ca3af">(</tspan><tspan fill="#c084fc">true</tspan><tspan fill="#9ca3af">)}</tspan></text>
+
+      <!-- Line 17:       onMouseLeave={() => setHovered(false)} -->
+      <text x="204" y="336"><tspan fill="#EEFF41">onMouseLeave</tspan><tspan fill="#9ca3af">={() =&gt; </tspan><tspan fill="#0097A7">setHovered</tspan><tspan fill="#9ca3af">(</tspan><tspan fill="#c084fc">false</tspan><tspan fill="#9ca3af">)}</tspan></text>
+
+      <!-- Line 18:     > -->
+      <text x="190" y="352"><tspan fill="#9ca3af">&gt;</tspan></text>
+
+      <!-- Line 19:       {props.label} -->
+      <text x="204" y="368"><tspan fill="#9ca3af">{</tspan><tspan fill="#60a5fa">props</tspan><tspan fill="#9ca3af">.</tspan><tspan fill="#60a5fa">label</tspan><tspan fill="#9ca3af">}</tspan></text>
+
+      <!-- Line 20:     </button> -->
+      <text x="190" y="384"><tspan fill="#9ca3af">&lt;/</tspan><tspan fill="#ef4444">button</tspan><tspan fill="#9ca3af">&gt;</tspan></text>
+    </g>
+  </g>
+</svg>

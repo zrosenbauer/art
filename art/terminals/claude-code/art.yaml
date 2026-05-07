@@ -1,0 +1,7 @@
+title: Claude Code
+description: Claude Code terminal session — welcome banner, user prompt, two tool calls (Read/Write), assistant response, input box, and status line. Generic Button-component example as the body.
+alt: Claude Code terminal session showing a tool-call exchange
+tags:
+  - terminal
+  - claude-code
+  - mockup
